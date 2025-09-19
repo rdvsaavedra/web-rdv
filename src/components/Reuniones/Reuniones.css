@@ -1,0 +1,446 @@
+.reuniones {
+  padding: 80px 0 120px;
+  background-color: var(--bg-light);
+}
+
+.reuniones-title {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--text-color);
+  margin-bottom: 50px;
+  font-weight: 600;
+}
+
+.reuniones-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.reuniones-tabs-container {
+  /* position: sticky; <-- LÍNEA ELIMINADA */
+  /* top: 100px;      <-- LÍNEA ELIMINADA */
+}
+
+.reuniones-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.tab-button {
+  background-color: white;
+  color: var(--text-color);
+  border: 2px solid var(--bg-gray);
+  padding: 16px 24px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.tab-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.tab-button:hover::before {
+  left: 100%;
+}
+
+.tab-button:hover {
+  background-color: var(--secondary-color);
+  color: var(--text-white);
+  transform: translateY(-2px);
+  border-color: var(--secondary-color);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.tab-button.active {
+  background-color: var(--accent-color);
+  color: var(--text-white);
+  box-shadow: 0 8px 30px rgba(52, 152, 219, 0.3);
+  border-color: var(--accent-color);
+  transform: translateY(-1px);
+}
+
+.reuniones-content-wrapper {
+  /* No se necesita min-height aquí */
+}
+
+.schedule-info {
+  background-color: white;
+  padding: 45px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border-left: 6px solid var(--accent-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: all 0.4s ease;
+}
+
+.schedule-info h3 {
+  font-size: 2rem;
+  color: var(--text-color);
+  margin-bottom: 35px;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.schedule-info h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
+.schedule-item {
+  margin-bottom: 35px;
+}
+
+.schedule-item:last-child {
+  margin-bottom: 0;
+}
+
+/* --- CAMBIO AQUÍ: Eliminamos el fondo gris del día --- */
+.schedule-day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  /* padding: 15px;          <-- LÍNEA ELIMINADA */
+  /* background-color: var(--bg-light); <-- LÍNEA ELIMINADA */
+  border-radius: 12px;
+  border-bottom: none;
+}
+
+.day-icon {
+  width: 45px;
+  height: 45px;
+  padding: 10px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+}
+
+.schedule-day h4 {
+  font-size: 1.3rem;
+  color: var(--secondary-color);
+  margin: 0;
+  font-weight: 700;
+  text-align: center;
+}
+
+.schedule-times {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-left: 0;
+  align-items: center;
+}
+
+.time-item {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.time-item::before {
+  display: none;
+}
+
+.time-item:not(:last-child)::after {
+  display: none;
+}
+
+.time-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  background-color: var(--bg-light);
+  padding: 20px 25px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  width: 100%;
+}
+
+.time-wrapper:hover {
+  background-color: white;
+  transform: translateY(-3px);
+  border-color: var(--accent-color);
+  box-shadow: 0 8px 30px rgba(52, 152, 219, 0.15);
+}
+
+.time-icon {
+  width: 55px;
+  height: 55px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.time-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-grow: 1;
+}
+
+.time {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--accent-color);
+  letter-spacing: 0.5px;
+}
+
+.activity {
+  font-size: 16px;
+  color: var(--text-light);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.section-divider {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 0;
+}
+
+.divider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@media screen and (min-width: 1025px) {
+  .schedule-info {
+    height: 600px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .reuniones-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-width: 800px;
+  }
+
+  .reuniones-tabs-container {
+    position: static;
+  }
+
+  .reuniones-tabs {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tab-button {
+    width: auto;
+    min-width: 140px;
+    padding: 14px 20px;
+    font-size: 14px;
+  }
+
+  .schedule-info {
+    min-height: auto; 
+    padding: 35px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .reuniones {
+    padding: 60px 20px;
+  }
+
+  .reuniones-title {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+  }
+
+  .reuniones-tabs {
+    gap: 8px;
+    margin-bottom: 30px;
+  }
+
+  .tab-button {
+    padding: 12px 16px;
+    font-size: 13px;
+    min-width: 120px;
+  }
+
+  .schedule-info {
+    padding: 30px 25px;
+  }
+
+  .schedule-info h3 {
+    font-size: 1.7rem;
+    margin-bottom: 30px;
+  }
+
+  /* --- CAMBIO AQUÍ en media query: también quitamos el fondo en móvil --- */
+  .schedule-day {
+    padding: 0; /* Aseguramos que no haya padding residual */
+    background-color: transparent; /* Aseguramos que no haya fondo residual */
+    flex-direction: column; /* Lo mantenemos así para móvil */
+    text-align: center;
+    gap: 10px;
+    margin-bottom: 20px; /* Ajustamos un poco el margen para que no se vea pegado */
+  }
+
+  .day-icon {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+  }
+
+  .schedule-day h4 {
+    font-size: 1.1rem;
+  }
+
+  .time-wrapper {
+    padding: 18px 20px;
+    gap: 15px;
+  }
+
+  .time-icon {
+    width: 50px;
+    height: 50px;
+    padding: 8px;
+  }
+
+  .time {
+    font-size: 18px;
+  }
+
+  .activity {
+    font-size: 15px;
+  }
+
+  .section-divider {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .reuniones {
+    padding: 50px 15px;
+  }
+
+  .reuniones-title {
+    font-size: 1.9rem;
+  }
+
+  .tab-button {
+    min-width: 100px;
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+
+  .schedule-info {
+    padding: 25px 20px;
+  }
+
+  .schedule-info h3 {
+    font-size: 1.5rem;
+  }
+
+  /* --- CAMBIO AQUÍ en media query: También en 480px y menos --- */
+  .schedule-day {
+    padding: 0; /* Aseguramos que no haya padding residual */
+    background-color: transparent; /* Aseguramos que no haya fondo residual */
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    margin-bottom: 20px; /* Ajustamos un poco el margen */
+  }
+
+  .day-icon {
+    width: 35px;
+    height: 35px;
+    padding: 6px;
+  }
+
+  .schedule-day h4 {
+    font-size: 1rem;
+  }
+
+  .time-wrapper {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+    gap: 12px;
+  }
+
+  .time-icon {
+    width: 45px;
+    height: 45px;
+    padding: 6px;
+    align-self: center;
+  }
+
+  .time-info {
+    align-items: center;
+    text-align: center;
+  }
+
+  .time {
+    font-size: 17px;
+  }
+
+  .activity {
+    font-size: 14px;
+  }
+
+  .section-divider {
+    height: 150px;
+  }
+}

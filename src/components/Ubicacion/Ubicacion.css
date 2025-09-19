@@ -1,0 +1,141 @@
+.ubicacion {
+  padding: 80px 0;
+  background-color: var(--bg-light);
+}
+
+.ubicacion-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.ubicacion-subtitle {
+  font-size: 16px;
+  color: var(--text-light);
+  font-weight: 400;
+  margin-bottom: 10px;
+  text-transform: lowercase;
+}
+
+.ubicacion-title {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.ubicacion-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.ubicacion-info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.direccion {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.direccion-icon {
+  /* No necesitamos font-size aquí porque la imagen tiene su propio tamaño */
+  /* margin-top: 5px; /* Mantenemos este margen si queremos ajustar la alineación vertical */
+  display: flex; /* Asegura que la imagen se centre o alinee bien dentro de su div */
+  align-items: center; /* Centra la imagen si el div tiene más altura */
+  justify-content: center; /* Centra la imagen si el div tiene más anchura */
+  padding-top: 5px; /* Ajuste manual si el ícono no se alinea bien con el texto */
+}
+
+/* --- NUEVA CLASE PARA EL ÍCONO DE UBICACIÓN --- */
+.ubicacion-pin-icon {
+  width: 24px; /* Tamaño del ícono, puedes ajustar */
+  height: 24px; /* Mismo que el width para que sea cuadrado */
+  object-fit: contain;
+}
+
+.direccion-text h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+.direccion-text p {
+  font-size: 16px;
+  color: var(--text-light);
+}
+
+.iglesia-image {
+  width: 100%;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.iglesia-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.iglesia-image:hover img {
+  transform: scale(1.05);
+}
+
+.ubicacion-map {
+  height: 400px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .ubicacion {
+    padding: 60px 0;
+  }
+  
+  .ubicacion-title {
+    font-size: 2rem;
+  }
+  
+  .ubicacion-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .ubicacion-map {
+    height: 300px;
+    order: -1;
+  }
+  
+  .direccion {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .direccion-icon {
+    padding-top: 0; /* Reinicia si se había ajustado para desktop */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .ubicacion-title {
+    font-size: 1.8rem;
+  }
+  
+  .direccion-text h4 {
+    font-size: 16px;
+  }
+  
+  .direccion-text p {
+    font-size: 14px;
+  }
+}
