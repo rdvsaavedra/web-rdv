@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Manrope:wght@300;400&family=Martian+Mono&display=swap');
-
-
-/* --- PEGA EL @import DE ARRIBA EN TU ARCHIVO CSS PRINCIPAL --- */
+/* <CHANGE> Importando Poppins en lugar de las fuentes anteriores */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 .hero {
   position: relative;
@@ -34,11 +32,12 @@
   left: 0;
   width: 100%;
   height: 100%;
+  /* <CHANGE> Actualizando gradiente con colores verdes */
   background: linear-gradient(
     135deg,
-    rgba(44, 62, 80, 0.7) 0%,
-    rgba(44, 62, 80, 0.5) 50%,
-    rgba(44, 62, 80, 0.3) 100%
+    rgba(0, 79, 47, 0.7) 0%,
+    rgba(49, 109, 85, 0.5) 50%,
+    rgba(168, 221, 122, 0.3) 100%
   );
   z-index: -1;
 }
@@ -57,9 +56,9 @@
   padding: 0 20px;
 }
 
-/* --- CAMBIOS DE TIPOGRAFÍA AQUÍ --- */
+/* <CHANGE> Aplicando Poppins a todos los elementos del hero */
 .hero-location {
-  font-family: 'Manrope', sans-serif; /* APLICADO MANROPE */
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
   font-weight: 300;
   margin-bottom: 15px;
@@ -68,18 +67,18 @@
 }
 
 .hero-title {
-  font-family: 'Bree Serif', serif; /* APLICADO BREE SERIF */
+  font-family: 'Poppins', sans-serif;
   font-size: 3.5rem;
-  font-weight: 700; /* Bree Serif ya es bold, pero es buena práctica mantenerlo */
+  font-weight: 700;
   margin-bottom: 25px;
   line-height: 1.1;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .hero-description {
-  font-family: 'Martian Mono', monospace; /* APLICADO MARTIAN MONO */
+  font-family: 'Poppins', sans-serif;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: 40px;
   opacity: 0.95;
   line-height: 1.6;
@@ -87,7 +86,6 @@
   margin-left: auto;
   margin-right: auto;
 }
-/* --- FIN DE CAMBIOS DE TIPOGRAFÍA --- */
 
 .hero-btn {
   display: inline-flex;
@@ -100,6 +98,8 @@
   border-radius: var(--border-radius);
   font-size: 16px;
   font-weight: 500;
+  /* <CHANGE> Aplicando Poppins al botón */
+  font-family: 'Poppins', sans-serif;
   cursor: pointer;
   transition: var(--transition);
   backdrop-filter: blur(10px);

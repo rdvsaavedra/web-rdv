@@ -11,6 +11,8 @@
 .ubicacion-subtitle {
   font-size: 16px;
   color: var(--text-light);
+  /* <CHANGE> Aplicando Poppins */
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   margin-bottom: 10px;
   text-transform: lowercase;
@@ -19,6 +21,8 @@
 .ubicacion-title {
   font-size: 2.5rem;
   color: var(--text-color);
+  /* <CHANGE> Aplicando Poppins */
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   margin-bottom: 20px;
 }
@@ -44,18 +48,15 @@
 }
 
 .direccion-icon {
-  /* No necesitamos font-size aquí porque la imagen tiene su propio tamaño */
-  /* margin-top: 5px; /* Mantenemos este margen si queremos ajustar la alineación vertical */
-  display: flex; /* Asegura que la imagen se centre o alinee bien dentro de su div */
-  align-items: center; /* Centra la imagen si el div tiene más altura */
-  justify-content: center; /* Centra la imagen si el div tiene más anchura */
-  padding-top: 5px; /* Ajuste manual si el ícono no se alinea bien con el texto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5px;
 }
 
-/* --- NUEVA CLASE PARA EL ÍCONO DE UBICACIÓN --- */
 .ubicacion-pin-icon {
-  width: 24px; /* Tamaño del ícono, puedes ajustar */
-  height: 24px; /* Mismo que el width para que sea cuadrado */
+  width: 24px;
+  height: 24px;
   object-fit: contain;
 }
 
@@ -63,12 +64,16 @@
   font-size: 18px;
   font-weight: 600;
   color: var(--text-color);
+  /* <CHANGE> Aplicando Poppins */
+  font-family: 'Poppins', sans-serif;
   margin-bottom: 5px;
 }
 
 .direccion-text p {
   font-size: 16px;
   color: var(--text-light);
+  /* <CHANGE> Aplicando Poppins */
+  font-family: 'Poppins', sans-serif;
 }
 
 .iglesia-image {
@@ -122,7 +127,7 @@
   }
 
   .direccion-icon {
-    padding-top: 0; /* Reinicia si se había ajustado para desktop */
+    padding-top: 0;
   }
 }
 

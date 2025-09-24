@@ -32,6 +32,8 @@
 .about-intro {
   font-size: 18px;
   color: var(--accent-color);
+  /* <CHANGE> Aplicando Poppins */
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-style: italic;
   margin: 0;
@@ -39,21 +41,24 @@
 }
 
 .about-title {
-  font-size: 3rem;
+  font-size: 2.5rem; /* antes 3rem */
   color: var(--text-color);
   margin-bottom: 40px;
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   line-height: 1.1;
   text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .title-highlight {
-  background: linear-gradient(135deg, var(--accent-color), #2980b9);
+  background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   position: relative;
+  font-size: 0.9em; /* relativo al .about-title, se verá más chico */
 }
+
 
 .about-description {
   margin-bottom: 40px;
@@ -62,6 +67,8 @@
 .description-paragraph {
   font-size: 17px;
   color: var(--text-light);
+  /* <CHANGE> Aplicando Poppins */
+  font-family: 'Poppins', sans-serif;
   line-height: 1.8;
   margin-bottom: 25px;
   text-align: justify;
@@ -99,12 +106,15 @@
 }
 
 .instagram-btn {
-  background: linear-gradient(135deg, #6c7b7f, #8391a0);
+  /* <CHANGE> Actualizando gradiente con colores verdes */
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
   color: white;
   border: none;
   padding: 16px 32px;
   border-radius: 50px;
   font-size: 16px;
+  /* <CHANGE> Aplicando Poppins */
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -112,7 +122,8 @@
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  box-shadow: 0 6px 20px rgba(108, 123, 127, 0.2);
+  /* <CHANGE> Actualizando sombra con colores verdes */
+  box-shadow: 0 6px 20px rgba(49, 109, 85, 0.2);
   position: relative;
   overflow: hidden;
 }
@@ -134,7 +145,8 @@
 
 .instagram-btn:hover {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 12px 30px rgba(108, 123, 127, 0.4);
+  /* <CHANGE> Actualizando sombra hover con colores verdes */
+  box-shadow: 0 12px 30px rgba(49, 109, 85, 0.4);
 }
 
 .btn-text {
@@ -150,6 +162,8 @@
 .cta-subtitle {
   font-size: 14px;
   color: var(--text-light);
+  /* <CHANGE> Aplicando Poppins */
+  font-family: 'Poppins', sans-serif;
   margin-top: 12px;
   font-style: italic;
 }
@@ -218,6 +232,8 @@
 .overlay-text p {
   color: white;
   font-size: 14px;
+  /* <CHANGE> Aplicando Poppins */
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   margin: 0;
   text-align: center;
@@ -242,7 +258,8 @@
   transform: translateX(-50%);
   width: 100px;
   height: 4px;
-  background: linear-gradient(90deg, var(--accent-color), #2980b9);
+  /* <CHANGE> Actualizando gradiente con colores verdes */
+  background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
   border-radius: 2px;
 }
 
@@ -261,11 +278,13 @@
 }
 
 .vm-item.vision {
-  border-left: 4px solid #7f8c8d;
+  /* <CHANGE> Actualizando color del borde con verde */
+  border-left: 4px solid var(--secondary-color);
 }
 
 .vm-item.mission {
-  border-left: 4px solid #95a5a6;
+  /* <CHANGE> Actualizando color del borde con verde */
+  border-left: 4px solid var(--accent-color);
 }
 
 .vm-header {
@@ -284,6 +303,8 @@
   font-size: 1.8rem;
   color: var(--text-color);
   margin: 0;
+  /* <CHANGE> Aplicando Poppins */
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
 }
 
@@ -299,12 +320,16 @@
   font-size: 1.1rem;
   color: var(--secondary-color);
   margin-bottom: 10px;
+  /* <CHANGE> Aplicando Poppins */
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
 }
 
 .vm-point p {
   font-size: 15px;
   color: var(--text-light);
+  /* <CHANGE> Aplicando Poppins */
+  font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   margin: 0;
 }
@@ -312,6 +337,8 @@
 .mission-subtitle {
   font-size: 16px;
   color: var(--accent-color);
+  /* <CHANGE> Aplicando Poppins */
+  font-family: 'Poppins', sans-serif;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -321,6 +348,8 @@
   border-left: 5px solid var(--accent-color);
   padding: 25px;
   border-radius: 15px;
+  /* <CHANGE> Aplicando Poppins */
+  font-family: 'Poppins', sans-serif;
   font-style: italic;
   line-height: 1.8;
   position: relative;
@@ -338,7 +367,8 @@
 }
 
 .mission-quote mark {
-  background: linear-gradient(120deg, rgba(52, 152, 219, 0.2), rgba(52, 152, 219, 0.3));
+  /* <CHANGE> Actualizando background con colores verdes */
+  background: linear-gradient(120deg, rgba(168, 221, 122, 0.2), rgba(168, 221, 122, 0.3));
   color: var(--accent-color);
   font-weight: 600;
   padding: 2px 4px;
@@ -378,8 +408,6 @@
   z-index: 0;
 }
 
-
-
 .about-hero-content {
   text-align: center;
   color: white;
@@ -404,6 +432,8 @@
 
 .hero-subtitle {
   font-size: 2.2rem;
+  /* <CHANGE> Aplicando Poppins */
+  font-family: 'Poppins', sans-serif;
   font-weight: 300;
   margin-bottom: 20px;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
@@ -412,6 +442,8 @@
 
 .hero-title {
   font-size: 5rem;
+  /* <CHANGE> Aplicando Poppins */
+  font-family: 'Poppins', sans-serif;
   font-weight: 900;
   margin-bottom: 20px;
   text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
@@ -436,8 +468,6 @@
   40% { transform: translateY(-10px); }
   60% { transform: translateY(-5px); }
 }
-
-
 
 /* Responsive */
 @media screen and (max-width: 768px) {

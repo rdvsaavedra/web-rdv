@@ -18,17 +18,17 @@
   width: auto;
 }
 
-/* --- CAMBIO AQUÍ: Ajustado para la nueva estructura vertical --- */
 .footer-social {
   display: flex;
-  flex-direction: column; /* Apila el título sobre los íconos */
-  align-items: center; /* Centra el título y los íconos */
-  gap: 15px; /* Espacio entre el título y los íconos */
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }
 
-/* --- NUEVA CLASE PARA EL TÍTULO --- */
 .footer-social-title {
   font-size: 16px;
+  /* <CHANGE> Aplicando Poppins */
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.9);
   margin: 0;
@@ -36,7 +36,6 @@
   letter-spacing: 1px;
 }
 
-/* --- NUEVA CLASE PARA EL CONTENEDOR DE ÍCONOS --- */
 .social-icons-container {
   display: flex;
   gap: 20px;
@@ -92,6 +91,8 @@
 .footer-address p {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.8);
+  /* <CHANGE> Aplicando Poppins */
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   display: flex;
   align-items: center;
@@ -107,6 +108,8 @@
 .footer-copyright p {
   font-size: 12px;
   color: rgba(255, 255, 255, 0.6);
+  /* <CHANGE> Aplicando Poppins */
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   display: flex;
   align-items: center;
@@ -142,7 +145,7 @@
     height: 50px;
   }
   
-  .social-icons-container { /* Ajuste responsivo */
+  .social-icons-container {
     gap: 15px;
   }
   
@@ -181,7 +184,7 @@
     font-size: 11px;
   }
   
-  .social-icons-container { /* Ajuste responsivo */
+  .social-icons-container {
     gap: 12px;
   }
   
