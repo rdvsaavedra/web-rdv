@@ -5,7 +5,6 @@ const GoogleMap = () => {
   const mapRef = useRef(null)
 
   useEffect(() => {
-    // Cargar Leaflet CSS y JS
     const loadLeaflet = () => {
       // CSS
       if (!document.querySelector('link[href*="leaflet"]')) {
@@ -28,35 +27,30 @@ const GoogleMap = () => {
 
     const initMap = () => {
       if (mapRef.current && window.L) {
-        // Limpiar mapa anterior si existe
         if (mapRef.current._leaflet_id) {
           mapRef.current._leaflet_id = null
         }
         mapRef.current.innerHTML = ''
 
-        // Coordenadas de Crisólogo Larralde 3471, CABA
-        const lat = -34.5886
-        const lng = -58.5094
+        const lat = -34.553982064300946
+        const lng = -58.47770290581281
 
-        // Crear el mapa
-        const map = window.L.map(mapRef.current).setView([lat, lng], 15)
+        // --- CAMBIO AQUÍ: Nivel de zoom intermedio ---
+        const map = window.L.map(mapRef.current).setView([lat, lng], 16)
 
-        // Agregar tiles (el mapa base)
         window.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           attribution: '© OpenStreetMap contributors'
         }).addTo(map)
 
-        // Agregar marcador
         const marker = window.L.marker([lat, lng]).addTo(map)
         marker.bindPopup(`
           <div style="text-align: center;">
             <strong>Iglesia Renuevo de Vida</strong><br>
             Crisólogo Larralde 3471<br>
-            CABA, Devoto
+            Saavedra, CABA 
           </div>
         `).openPopup()
 
-        // Configuraciones adicionales
         map.scrollWheelZoom.disable()
         map.on('focus', () => map.scrollWheelZoom.enable())
         map.on('blur', () => map.scrollWheelZoom.disable())
@@ -65,7 +59,6 @@ const GoogleMap = () => {
 
     loadLeaflet()
 
-    // Cleanup
     return () => {
       if (mapRef.current && mapRef.current._leaflet_id) {
         mapRef.current._leaflet_id = null
