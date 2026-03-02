@@ -22,28 +22,28 @@ const About = () => {
               </video>
               <p className="about-intro">Donde la gracia de Dios te encuentra tal como eres</p>
             </div>
-            
+
             <h2 className="about-title">
               Un lugar de <span className="title-highlight">fe</span> y{' '}
               <span className="title-highlight">encuentro</span>
             </h2>
-            
+
             <div className="about-description">
               <p className="description-paragraph">
-                En nuestra iglesia <strong>creemos profundamente</strong> en la gracia transformadora de Dios. 
-                Somos una comunidad que abraza a cada persona tal como es, ofreciendo un espacio 
-                donde encontrarás <em>comprensión, esperanza y amor real</em> que trasciende cualquier 
+                En nuestra iglesia <strong>creemos profundamente</strong> en la gracia transformadora de Dios.
+                Somos una comunidad que abraza a cada persona tal como es, ofreciendo un espacio
+                donde encontrarás <em>comprensión, esperanza y amor real</em> que trasciende cualquier
                 situación.
               </p>
-              
+
               <p className="description-paragraph">
-                Creemos firmemente en el <strong>poder restaurador de Jesús</strong> y en Su capacidad 
-                para renovar vidas, sanar heridas y transformar historias. No importa de dónde 
-                vienes o por qué estás atravesando, aquí encontrarás personas genuinas que se 
+                Creemos firmemente en el <strong>poder restaurador de Jesús</strong> y en Su capacidad
+                para renovar vidas, sanar heridas y transformar historias. No importa de dónde
+                vienes o por qué estás atravesando, aquí encontrarás personas genuinas que se
                 caracterizan por ser <span className="text-accent">familia</span>.
               </p>
             </div>
-            
+
             <div className="cta-section">
               <button className="instagram-btn" onClick={handleInstagramClick}>
                 <span className="btn-text">Síguenos</span>
@@ -52,7 +52,7 @@ const About = () => {
               <p className="cta-subtitle">Únete a nuestra comunidad digital</p>
             </div>
           </div>
-          
+
           <div className="about-image">
             <div className="image-wrapper">
               <img src={pastorImg} alt="Pastor y congregación" />
@@ -75,7 +75,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="vision-mission">
           <div className="vm-item vision">
             <div className="vm-header">
@@ -93,7 +93,7 @@ const About = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="vm-item mission">
             <div className="vm-header">
               <img src={misionIcon} alt="Misión" className="vm-icon" />
@@ -104,8 +104,8 @@ const About = () => {
                 <strong>Cinco áreas de desarrollo</strong>
               </div>
               <blockquote className="mission-quote">
-                "Por tanto, <mark>id</mark> (Evangelismo-Trabajo social), y <mark>haced discípulos</mark> a todas las naciones 
-                (Discipulado-Pastoreo), <mark>bautizándolos</mark> (Comunión) en el nombre del padre, del Hijo y del Espíritu Santo; 
+                "Por tanto, <mark>id</mark> (Evangelismo-Trabajo social), y <mark>haced discípulos</mark> a todas las naciones
+                (Discipulado-Pastoreo), <mark>bautizándolos</mark> (Comunión) en el nombre del padre, del Hijo y del Espíritu Santo;
                 <mark>enseñándoles</mark> (Capacitación) que <mark>guarden</mark> (Servicio) todas las cosas que os he mandado."
                 <cite>— Mateo 28:19-20</cite>
               </blockquote>
@@ -113,18 +113,13 @@ const About = () => {
           </div>
         </div>
       </div>
-      
+
       <div className="about-hero">
-        <div className="hero-particles"></div>
         <div className="about-hero-content">
           <div className="hero-text-wrapper">
-            <h2 className="hero-subtitle">Jesús, una fuente de agua</h2>
-            <h1 className="hero-title">
-              <span className="title-letter">V</span>
-              <span className="title-letter">I</span>
-              <span className="title-letter">V</span>
-              <span className="title-letter">A</span>
-            </h1>
+            <p className="hero-eyebrow">Jesús, una fuente de agua</p>
+            <h1 className="hero-title">VIVA</h1>
+            <div className="hero-divider" />
           </div>
         </div>
       </div>

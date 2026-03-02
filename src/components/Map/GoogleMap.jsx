@@ -1,72 +1,16 @@
-import { useEffect, useRef } from 'react'
-import './GoogleMap.css'
-
 const GoogleMap = () => {
-  const mapRef = useRef(null)
-
-  useEffect(() => {
-    const loadLeaflet = () => {
-      // CSS
-      if (!document.querySelector('link[href*="leaflet"]')) {
-        const cssLink = document.createElement('link')
-        cssLink.rel = 'stylesheet'
-        cssLink.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'
-        document.head.appendChild(cssLink)
-      }
-
-      // JavaScript
-      if (!window.L) {
-        const script = document.createElement('script')
-        script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'
-        script.onload = initMap
-        document.head.appendChild(script)
-      } else {
-        initMap()
-      }
-    }
-
-    const initMap = () => {
-      if (mapRef.current && window.L) {
-        if (mapRef.current._leaflet_id) {
-          mapRef.current._leaflet_id = null
-        }
-        mapRef.current.innerHTML = ''
-
-        const lat = -34.553982064300946
-        const lng = -58.47770290581281
-
-        // --- CAMBIO AQUÍ: Nivel de zoom intermedio ---
-        const map = window.L.map(mapRef.current).setView([lat, lng], 16)
-
-        window.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          attribution: '© OpenStreetMap contributors'
-        }).addTo(map)
-
-        const marker = window.L.marker([lat, lng]).addTo(map)
-        marker.bindPopup(`
-          <div style="text-align: center;">
-            <strong>Iglesia Renuevo de Vida</strong><br>
-            Crisólogo Larralde 3471<br>
-            Saavedra, CABA 
-          </div>
-        `).openPopup()
-
-        map.scrollWheelZoom.disable()
-        map.on('focus', () => map.scrollWheelZoom.enable())
-        map.on('blur', () => map.scrollWheelZoom.disable())
-      }
-    }
-
-    loadLeaflet()
-
-    return () => {
-      if (mapRef.current && mapRef.current._leaflet_id) {
-        mapRef.current._leaflet_id = null
-      }
-    }
-  }, [])
-
-  return <div ref={mapRef} className="google-map leaflet-map" />
+  return (
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.4728514488313!2d-58.4802879!3d-34.5542491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb715dc6f921f%3A0xe5a3c9a6af056ebd!2sC.%20Cris%C3%B3logo%20Larralde%203471%2C%20C1430FQM%20CABA%2C%20Argentina!5e0!3m2!1sen!2sus!4v1709413284074!5m2!1sen!2sus"
+      width="100%"
+      height="100%"
+      style={{ border: 0, display: 'block' }}
+      allowFullScreen=""
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+      title="Ubicación de la iglesia"
+    />
+  )
 }
 
 export default GoogleMap

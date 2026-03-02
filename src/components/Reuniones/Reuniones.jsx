@@ -92,7 +92,7 @@ const Reuniones = () => {
     <>
       <section id="reuniones-section" className="reuniones">
         <div className="container">
-          <h2 className="reuniones-title">Nuestras Reuniones</h2>
+          <h2 className="reuniones-title">Reuniones</h2>
           {/* Nuevo contenedor para el layout de 2 columnas */}
           <div className="reuniones-layout">
             {/* Columna Izquierda: Botones de Pestañas */}

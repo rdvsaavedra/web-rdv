@@ -1,9 +1,10 @@
 import './Hero.css'
 import inicioImg from '../../assets/images/Inicio.png'
+import LogoImg from '../../assets/images/IglesiaLogoCompleto.png'
 
 const Hero = () => {
-  const handleYouTubeClick = () => {
-    window.open('https://www.youtube.com/c/iglesiarenuevodevidasaavedra', '_blank')
+  const handleReunionesClick = () => {
+    document.getElementById('reuniones-section')?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
@@ -12,18 +13,17 @@ const Hero = () => {
         <img src={inicioImg} alt="Familia en iglesia" className="hero-image" />
         <div className="hero-overlay"></div>
       </div>
-      
+
       <div className="hero-content">
         <div className="container">
           <div className="hero-text">
-            <p className="hero-location">Buenos aires, Argentina</p>
-            <h1 className="hero-title">Renuevo de vida</h1>
+            <p className="hero-location">Buenos Aires, Argentina</p>
+            <img src={LogoImg} alt="Renuevo de vida" className="hero-logo" />
             <p className="hero-description">
-              Somos una iglesia cristiana donde la salud y la 
-              restauración espiritual y emocional.
+              La alegría de estar en C A S A
             </p>
-            <button className="hero-btn" onClick={handleYouTubeClick}>
-              Ver nuestra reunión ahora
+            <button className="hero-btn" onClick={handleReunionesClick}>
+              Horarios
               <span className="arrow">→</span>
             </button>
           </div>

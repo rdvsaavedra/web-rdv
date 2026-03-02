@@ -60,16 +60,20 @@ const Values = () => {
           <h2 className="values-title">Nuestros valores</h2>
           <p className="values-subtitle">El carácter que nos define</p>
         </div>
-        
+
         <div className="values-grid">
           {values.map((value, index) => (
-            <div key={index} className="value-card">
-              <div className="value-icon">
-                <img src={value.icon} alt={value.title} />
+            <div key={index} className="value-item" style={{ '--i': index }}>
+              <div className="value-icon-wrap">
+                <img src={value.icon} alt={value.title} className="value-icon-img" />
+                <div className="value-glow" />
               </div>
-              <h3 className="value-title">{value.title}</h3>
-              <p className="value-description">{value.description}</p>
-              <span className="value-reference">{value.reference}</span>
+              <div className="value-cloud">
+                <div className="cloud-tail" />
+                <h3 className="cloud-title">{value.title}</h3>
+                <p className="cloud-description">{value.description}</p>
+                <span className="cloud-reference">{value.reference}</span>
+              </div>
             </div>
           ))}
         </div>
