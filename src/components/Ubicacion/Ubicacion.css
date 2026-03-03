@@ -90,9 +90,6 @@
   transition: var(--transition);
 }
 
-.iglesia-image:hover img {
-  transform: scale(1.05);
-}
 
 .ubicacion-map {
   height: 400px;

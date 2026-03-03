@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './Values.css'
 import graciaIcon from '../../assets/icons/Gracia.png'
 import espiritualidadIcon from '../../assets/icons/Espiritualidad.png'
@@ -8,6 +9,11 @@ import creatividadIcon from '../../assets/icons/Creatividad.png'
 import familiaridadIcon from '../../assets/icons/Familiaridad.png'
 
 const Values = () => {
+  const [activeIndex, setActiveIndex] = useState(null)
+
+  const handleClick = (index) => {
+    setActiveIndex(activeIndex === index ? null : index)
+  }
   const values = [
     {
       icon: graciaIcon,
@@ -63,7 +69,12 @@ const Values = () => {
 
         <div className="values-grid">
           {values.map((value, index) => (
-            <div key={index} className="value-item" style={{ '--i': index }}>
+            <div
+              key={index}
+              className={`value-item ${activeIndex === index ? 'active' : ''}`}
+              style={{ '--i': index }}
+              onClick={() => handleClick(index)}
+            >
               <div className="value-icon-wrap">
                 <img src={value.icon} alt={value.title} className="value-icon-img" />
                 <div className="value-glow" />
