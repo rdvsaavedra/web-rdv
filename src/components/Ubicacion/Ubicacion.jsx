@@ -1,37 +1,56 @@
 import './Ubicacion.css'
 import GoogleMap from '../Map/GoogleMap'
 import iglesiaImg from '../../assets/images/Iglesia.png'
-import UbicacionIcon from '../../assets/icons/Ubicacion.png' 
+import UbicacionIcon from '../../assets/icons/Ubicacion.png'
+import IGIcon from '../../assets/icons/IG.png'
 
 const Ubicacion = () => {
   return (
     <section id="ubicacion" className="ubicacion">
       <div className="container">
+
         <div className="ubicacion-header">
-          <h3 className="ubicacion-subtitle">visitanos</h3>
+          <span className="ubicacion-eyebrow">
+            <img src={UbicacionIcon} alt="" className="eyebrow-icon" />
+            visitanos
+          </span>
           <h2 className="ubicacion-title">Sumate a nuestras reuniones</h2>
         </div>
-        
+
         <div className="ubicacion-content">
           <div className="ubicacion-info">
-            <div className="direccion">
-              <div className="direccion-icon">
-                <img src={UbicacionIcon} alt="Icono de Ubicación" className="ubicacion-pin-icon" />
+            <a
+              href="https://maps.app.goo.gl/Kn3ZpuDkE51TRHkJA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="direccion-card"
+            >
+              <div className="direccion-icon-wrap">
+                <img src={UbicacionIcon} alt="Ubicación" className="ubicacion-pin-icon" />
               </div>
               <div className="direccion-text">
-                <h4>Crisólogo Larralde 3471 - Saavedra, CABA</h4>
+                <span className="direccion-label">Dirección</span>
+                <h4>Crisólogo Larralde 3471</h4>
+                <p>Saavedra, CABA</p>
+              </div>
+              <span className="direccion-arrow">→</span>
+            </a>
+
+            <div className="iglesia-image" onClick={() => window.open('https://www.instagram.com/iglesiarenuevodevida/?hl=es-la', '_blank')}>
+              <img src={iglesiaImg} alt="Iglesia Renuevo de Vida" />
+              <div className="iglesia-overlay">
+                <img src={IGIcon} alt="Instagram" className="iglesia-overlay-icon" />
+                <span className="iglesia-overlay-text">@iglesiarenuevodevida</span>
               </div>
             </div>
-            
-            <div className="iglesia-image">
-              <img src={iglesiaImg} alt="Iglesia Renuevo de Vida" />
-            </div>
+
           </div>
-          
+
           <div className="ubicacion-map">
             <GoogleMap />
           </div>
         </div>
+
       </div>
     </section>
   )

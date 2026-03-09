@@ -1,9 +1,7 @@
-/* <CHANGE> Importando Poppins en lugar de las fuentes anteriores */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-
 .hero {
   position: relative;
   height: 100vh;
+  min-height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,11 +30,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  /* <CHANGE> Actualizando gradiente con colores verdes */
-  background: linear-gradient(135deg,
-      rgba(0, 79, 47, 0.7) 0%,
-      rgba(49, 109, 85, 0.5) 50%,
-      rgba(168, 221, 122, 0.3) 100%);
+  background: linear-gradient(160deg,
+      rgba(27, 58, 45, 0.82) 0%,
+      rgba(44, 74, 62, 0.65) 50%,
+      rgba(46, 107, 138, 0.4) 100%);
   z-index: -1;
 }
 
@@ -51,72 +48,109 @@
 .hero-text {
   max-width: 600px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
 }
 
-/* <CHANGE> Aplicando Poppins a todos los elementos del hero */
+/* Ubicación */
 .hero-location {
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  font-weight: 300;
-  margin-bottom: 15px;
-  opacity: 0.9;
-  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  padding: 7px 18px;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 28px;
+  animation: fadeInUp 0.8s 0.1s ease both;
 }
 
+.hero-location-pin {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+/* Logo */
 .hero-logo {
   max-width: 320px;
-  width: 90%;
+  width: 85%;
   height: auto;
-  margin-bottom: 25px;
-  filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.3));
+  margin-bottom: 22px;
+  filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.35));
+  animation: fadeInUp 0.8s 0.2s ease both;
 }
 
+/* Descripción */
 .hero-description {
-  font-family: 'Poppins', sans-serif;
-  font-size: 18px;
+  font-family: var(--font-body);
+  font-size: 17px;
   font-weight: 400;
+  letter-spacing: 0.12em;
   margin-bottom: 40px;
-  opacity: 0.95;
+  opacity: 0.88;
   line-height: 1.6;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+  animation: fadeInUp 0.8s 0.3s ease both;
 }
 
+/* Botón */
 .hero-btn {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.15);
   color: var(--text-white);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  padding: 15px 30px;
-  border-radius: var(--border-radius);
-  font-size: 16px;
-  font-weight: 500;
-  /* <CHANGE> Aplicando Poppins al botón */
-  font-family: 'Poppins', sans-serif;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  padding: 14px 34px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font-body);
   cursor: pointer;
   transition: var(--transition);
-  backdrop-filter: blur(10px);
-  text-decoration: none;
+  backdrop-filter: blur(12px);
+  letter-spacing: 0.05em;
+  animation: fadeInUp 0.8s 0.4s ease both;
 }
 
 .hero-btn:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.7);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
 .arrow {
-  font-size: 18px;
-  transition: var(--transition);
+  font-size: 17px;
+  transition: transform 0.3s ease;
+  display: inline-block;
 }
 
 .hero-btn:hover .arrow {
   transform: translateX(5px);
+}
+
+/* Animación */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive */
@@ -126,66 +160,34 @@
   }
 
   .hero-description {
-    font-size: 16px;
-    margin-bottom: 30px;
+    font-size: 15px;
+    margin-bottom: 32px;
   }
 
   .hero-btn {
-    padding: 12px 24px;
+    padding: 12px 28px;
     font-size: 14px;
   }
 
   .hero-location {
-    font-size: 14px;
+    font-size: 12px;
+    padding: 6px 15px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .hero-logo {
-    max-width: 180px;
-    margin-bottom: 20px;
+    max-width: 190px;
+    margin-bottom: 18px;
   }
 
   .hero-description {
-    font-size: 15px;
-    padding: 0 10px;
+    font-size: 14px;
+    letter-spacing: 0.1em;
   }
 
   .hero-btn {
-    padding: 10px 20px;
+    padding: 11px 24px;
     font-size: 13px;
   }
-}
-
-/* Animaciones de entrada */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero-text>* {
-  animation: fadeInUp 0.8s ease forwards;
-}
-
-.hero-location {
-  animation-delay: 0.1s;
-}
-
-.hero-logo {
-  animation-delay: 0.2s;
-}
-
-.hero-description {
-  animation-delay: 0.3s;
-}
-
-.hero-btn {
-  animation-delay: 0.4s;
 }

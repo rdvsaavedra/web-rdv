@@ -1,6 +1,7 @@
 import './Hero.css'
 import inicioImg from '../../assets/images/Inicio.png'
 import LogoImg from '../../assets/images/IglesiaLogoCompleto.png'
+import ubicacionIcon from '../../assets/icons/Ubicacion.png'
 
 const Hero = () => {
   const handleReunionesClick = () => {
@@ -17,15 +18,23 @@ const Hero = () => {
       <div className="hero-content">
         <div className="container">
           <div className="hero-text">
-            <p className="hero-location">Buenos Aires, Argentina</p>
+
+            <div className="hero-location">
+              <img src={ubicacionIcon} alt="Ubicación" className="hero-location-pin" />
+              <span>Buenos Aires, Argentina</span>
+            </div>
+
             <img src={LogoImg} alt="Renuevo de vida" className="hero-logo" />
+
             <p className="hero-description">
               La alegría de estar en C A S A
             </p>
+
             <button className="hero-btn" onClick={handleReunionesClick}>
-              Horarios
+              <span>Horarios</span>
               <span className="arrow">→</span>
             </button>
+
           </div>
         </div>
       </div>

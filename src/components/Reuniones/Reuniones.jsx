@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react"
 import "./Reuniones.css"
 import chicosImg from "../../assets/images/Chicos.png"
 import calendarioIcon from "../../assets/icons/Calendario.png"
@@ -13,10 +12,9 @@ import mujerIcon from "../../assets/icons/Mujer.png"
 import corazonIcon from "../../assets/icons/Corazon.png"
 
 const Reuniones = () => {
-  const [activeTab, setActiveTab] = useState("generales")
-
-  const reunionesData = {
-    generales: {
+  const reunionesData = [
+    {
+      id: "generales",
       title: "Reuniones Generales",
       schedule: [
         {
@@ -29,7 +27,8 @@ const Reuniones = () => {
         },
       ],
     },
-    especiales: {
+    {
+      id: "especiales",
       title: "Reuniones Especiales",
       schedule: [
         {
@@ -41,7 +40,8 @@ const Reuniones = () => {
         },
       ],
     },
-    ninos: {
+    {
+      id: "ninos",
       title: "Niños",
       schedule: [
         {
@@ -50,7 +50,8 @@ const Reuniones = () => {
         },
       ],
     },
-    adolescentes: {
+    {
+      id: "adolescentes",
       title: "Ados & Jóvenes",
       schedule: [
         {
@@ -59,7 +60,8 @@ const Reuniones = () => {
         },
       ],
     },
-    mujeres: {
+    {
+      id: "mujeres",
       title: "Mujeres (Segunda juventud)",
       schedule: [
         {
@@ -68,7 +70,8 @@ const Reuniones = () => {
         },
       ],
     },
-    matrimonios: {
+    {
+      id: "matrimonios",
       title: "Matrimonios",
       schedule: [
         {
@@ -77,15 +80,6 @@ const Reuniones = () => {
         },
       ],
     },
-  }
-
-  const tabs = [
-    { key: "generales", label: "Generales" },
-    { key: "especiales", label: "Especiales" },
-    { key: "ninos", label: "Niños" },
-    { key: "adolescentes", label: "Ados & Jóvenes" },
-    { key: "mujeres", label: "Mujeres" },
-    { key: "matrimonios", label: "Matrimonios" },
   ]
 
   return (
@@ -93,28 +87,12 @@ const Reuniones = () => {
       <section id="reuniones-section" className="reuniones">
         <div className="container">
           <h2 className="reuniones-title">Reuniones</h2>
-          {/* Nuevo contenedor para el layout de 2 columnas */}
-          <div className="reuniones-layout">
-            {/* Columna Izquierda: Botones de Pestañas */}
-            <div className="reuniones-tabs-container">
-              <div className="reuniones-tabs">
-                {tabs.map((tab) => (
-                  <button
-                    key={tab.key}
-                    className={`tab-button ${activeTab === tab.key ? "active" : ""}`}
-                    onClick={() => setActiveTab(tab.key)}
-                  >
-                    {tab.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Columna Derecha: Contenido de los Horarios */}
-            <div className="reuniones-content-wrapper">
-              <div key={activeTab} className="schedule-info fade-in">
-                <h3>{reunionesData[activeTab].title}</h3>
-                {reunionesData[activeTab].schedule.map((item, index) => (
+          {/* Contenedor de grilla de tarjetas */}
+          <div className="reuniones-grid">
+            {reunionesData.map((reunion) => (
+              <div key={reunion.id} className="reunion-card fade-in">
+                <h3>{reunion.title}</h3>
+                {reunion.schedule.map((item, index) => (
                   <div key={index} className="schedule-item">
                     <div className="schedule-day">
                       <img src={calendarioIcon} alt="Calendario" className="day-icon" />
@@ -136,9 +114,9 @@ const Reuniones = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            ))}
           </div>{" "}
-          {/* Fin de .reuniones-layout */}
+          {/* Fin de .reuniones-grid */}
         </div>
       </section>
 
