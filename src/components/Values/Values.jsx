@@ -24,7 +24,7 @@ const Values = () => {
     {
       icon: espiritualidadIcon,
       title: 'Espiritualidad',
-      description: 'Buscando permanentemente la intimidad espiritual con el Espíritu.',
+      description: 'Buscando permanentemente la intimidad espiritual con el Espíritu',
       reference: 'Salmo 23:6a'
     },
     {
@@ -48,7 +48,7 @@ const Values = () => {
     {
       icon: creatividadIcon,
       title: 'Creatividad',
-      description: 'Buscando hacer las cosas de una manera nueva y fresca.',
+      description: 'Buscando hacer las cosas de una manera nueva y fresca',
       reference: '1 Cr 23:5-6a'
     },
     {
