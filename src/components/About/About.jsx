@@ -72,6 +72,10 @@ const About = () => {
                 <p><sup>16</sup>Así alumbre vuestra luz delante de los hombres, para que vean vuestras buenas obras, y glorifiquen a vuestro Padre que están los cielos.</p>
                 <cite>— Mateo 5:13-16</cite>
               </blockquote>
+              <blockquote className="vm-quote" style={{ marginTop: '16px' }}>
+                <p><sup>13</sup>Hasta que todos lleguemos a la unidad de la fe y del conocimiento del Hijo de Dios, a un varón perfecto, a la medida de la estatura de la plenitud de Cristo.</p>
+                <cite>— Efesios 4:13</cite>
+              </blockquote>
             </div>
           </div>
 
@@ -89,10 +93,6 @@ const About = () => {
                 (Discipulado-Pastoreo), <mark>bautizándolos</mark> (Comunión) en el nombre del padre, del Hijo y del Espíritu Santo;
                 <mark>enseñándoles</mark> (Capacitación) que <mark>guarden</mark> (Servicio) todas las cosas que os he mandado."
                 <cite>— Mateo 28:19-20</cite>
-              </blockquote>
-              <blockquote className="vm-quote" style={{ marginTop: '16px' }}>
-                <p><sup>13</sup>hasta que todos lleguemos a la unidad de la fe y del conocimiento del Hijo de Dios, a un varón perfecto, a la medida de la estatura de la plenitud de Cristo.</p>
-                <cite>— Efesios 4:13</cite>
               </blockquote>
             </div>
           </div>

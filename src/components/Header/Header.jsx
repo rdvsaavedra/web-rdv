@@ -29,7 +29,14 @@ const Header = () => {
               <button className="nav-link" onClick={() => scrollToSection('about')}>Nosotros</button>
             </li>
             <li className="nav-item">
-              <button className="nav-link" onClick={() => scrollToSection('reuniones-section')}>Reuniones</button>
+              <a
+                className="nav-link"
+                href="https://www.youtube.com/c/iglesiarenuevodevidasaavedra/live"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Reuniones
+              </a>
             </li>
             <li className="nav-item">
               <button className="nav-link" onClick={() => scrollToSection('vida-familia')}>Vida en familia</button>
