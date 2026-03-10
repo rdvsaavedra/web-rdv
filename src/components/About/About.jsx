@@ -7,22 +7,12 @@ import oracionIcon from '../../assets/icons/Oracion.png'
 import palabraIcon from '../../assets/icons/Palabra.png'
 
 const About = () => {
-  const handleInstagramClick = () => {
-    window.open('https://www.instagram.com/iglesiarenuevodevida/?hl=es-la', '_blank')
-  }
-
   return (
     <section id="about" className="about">
       <div className="container">
+        {/*
         <div className="about-content">
           <div className="about-text">
-            <div className="about-intro-wrapper">
-              <video className="about-intro-accent" autoPlay loop muted>
-                <source src="/src/assets/icons/biblia.mp4" type="video/mp4" />
-              </video>
-              <p className="about-intro">Donde la gracia de Dios te encuentra tal como eres</p>
-            </div>
-
             <h2 className="about-title">
               Un lugar de <span className="title-highlight">fe</span> y{' '}
               <span className="title-highlight">encuentro</span>
@@ -35,21 +25,12 @@ const About = () => {
                 donde encontrarás <em>comprensión, esperanza y amor real</em> que trasciende cualquier
                 situación.
               </p>
-
               <p className="description-paragraph">
                 Creemos firmemente en el <strong>poder restaurador de Jesús</strong> y en Su capacidad
                 para renovar vidas, sanar heridas y transformar historias. No importa de dónde
                 vienes o por qué estás atravesando, aquí encontrarás personas genuinas que se
                 caracterizan por ser <span className="text-accent">familia</span>.
               </p>
-            </div>
-
-            <div className="cta-section">
-              <button className="instagram-btn" onClick={handleInstagramClick}>
-                <span className="btn-text">Síguenos</span>
-                <span className="btn-handle">@iglesiarenuevodevida</span>
-              </button>
-              <p className="cta-subtitle">Únete a nuestra comunidad digital</p>
             </div>
           </div>
 
@@ -75,6 +56,7 @@ const About = () => {
             </div>
           </div>
         </div>
+        */}
 
         <div className="vision-mission">
           <div className="vm-item vision">
@@ -83,14 +65,13 @@ const About = () => {
               <h3>Visión</h3>
             </div>
             <div className="vm-content">
-              <div className="vm-point">
-                <h4>Exógena</h4>
-                <p>Tener presencia e influencia espiritual en nuestro barrio.</p>
-              </div>
-              <div className="vm-point">
-                <h4>Endógena</h4>
-                <p>Que cada persona pueda llegar a crecer en sabiduría y madurez espiritual.</p>
-              </div>
+              <blockquote className="vm-quote">
+                <p><sup>13</sup>Vosotros sois la sal de la tierra; pero si la sal se desvaneciere, ¿con qué será salada? No sirve más para nada, sino para ser echada fuera y hollada por los hombres.</p>
+                <p><sup>14</sup>Vosotros sois la luz del mundo; una ciudad asentada sobre un monte no se puede esconder.</p>
+                <p><sup>15</sup>Ni se enciende una luz y se pone debajo de un almud, sino sobre el candelero, y alumbra a todos los que están en casa.</p>
+                <p><sup>16</sup>Así alumbre vuestra luz delante de los hombres, para que vean vuestras buenas obras, y glorifiquen a vuestro Padre que están los cielos.</p>
+                <cite>— Mateo 5:13-16</cite>
+              </blockquote>
             </div>
           </div>
 
@@ -109,11 +90,15 @@ const About = () => {
                 <mark>enseñándoles</mark> (Capacitación) que <mark>guarden</mark> (Servicio) todas las cosas que os he mandado."
                 <cite>— Mateo 28:19-20</cite>
               </blockquote>
+              <blockquote className="vm-quote" style={{ marginTop: '16px' }}>
+                <p><sup>13</sup>hasta que todos lleguemos a la unidad de la fe y del conocimiento del Hijo de Dios, a un varón perfecto, a la medida de la estatura de la plenitud de Cristo.</p>
+                <cite>— Efesios 4:13</cite>
+              </blockquote>
             </div>
           </div>
         </div>
       </div>
-
+      {/*
       <div className="about-hero">
         <div className="about-hero-content">
           <div className="hero-text-wrapper">
@@ -123,6 +108,7 @@ const About = () => {
           </div>
         </div>
       </div>
+      */}
     </section>
   )
 }

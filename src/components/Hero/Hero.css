@@ -8,41 +8,111 @@
   overflow: hidden;
 }
 
-.hero-background {
+/* Carrusel */
+.hero-carousel {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -2;
+  inset: 0;
+  z-index: 0;
+  background-color: #1b3a2d;
 }
 
-.hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  will-change: opacity;
+}
+
+.hero-slide.active {
+  opacity: 1;
 }
 
 .hero-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: linear-gradient(160deg,
-      rgba(27, 58, 45, 0.82) 0%,
-      rgba(44, 74, 62, 0.65) 50%,
-      rgba(46, 107, 138, 0.4) 100%);
-  z-index: -1;
+      rgba(27, 58, 45, 0.75) 0%,
+      rgba(44, 74, 62, 0.55) 50%,
+      rgba(46, 107, 138, 0.35) 100%);
+  z-index: 1;
 }
 
+/* Flechas */
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: white;
+  font-size: 28px;
+  line-height: 1;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
+  opacity: 0.6;
+}
+
+.hero-arrow:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.hero-arrow-left {
+  left: 20px;
+}
+
+.hero-arrow-right {
+  right: 20px;
+}
+
+/* Dots */
+.hero-dots {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.hero-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.hero-dot.active {
+  background: white;
+  width: 20px;
+  border-radius: 3px;
+}
+
+/* Contenido */
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 5;
   width: 100%;
   text-align: center;
-  color: var(--text-white);
+  color: white;
 }
 
 .hero-text {
@@ -52,10 +122,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0;
 }
 
-/* Ubicación */
 .hero-location {
   display: inline-flex;
   align-items: center;
@@ -81,7 +149,6 @@
   filter: brightness(0) invert(1);
 }
 
-/* Logo */
 .hero-logo {
   max-width: 320px;
   width: 85%;
@@ -91,7 +158,6 @@
   animation: fadeInUp 0.8s 0.2s ease both;
 }
 
-/* Descripción */
 .hero-description {
   font-family: var(--font-body);
   font-size: 17px;
@@ -103,13 +169,12 @@
   animation: fadeInUp 0.8s 0.3s ease both;
 }
 
-/* Botón */
 .hero-btn {
   display: inline-flex;
   align-items: center;
   gap: 12px;
   background: rgba(255, 255, 255, 0.15);
-  color: var(--text-white);
+  color: white;
   border: 1.5px solid rgba(255, 255, 255, 0.4);
   padding: 14px 34px;
   border-radius: 50px;
@@ -117,7 +182,7 @@
   font-weight: 600;
   font-family: var(--font-body);
   cursor: pointer;
-  transition: var(--transition);
+  transition: all 0.3s ease;
   backdrop-filter: blur(12px);
   letter-spacing: 0.05em;
   animation: fadeInUp 0.8s 0.4s ease both;
@@ -140,7 +205,6 @@
   transform: translateX(5px);
 }
 
-/* Animación */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -153,41 +217,94 @@
   }
 }
 
-/* Responsive */
+/* =========================================
+   Responsive (Aquí están los cambios)
+   ========================================= */
+
 @media screen and (max-width: 768px) {
+  .hero {
+    /* Limitamos a 60% del alto de la pantalla, para que no ocupe todo */
+    height: 60vh;
+    min-height: 420px;
+    max-height: unset;
+    /* Quitamos el aspect-ratio para tener un control más estricto con el vh */
+  }
+
+  .hero-slide {
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .hero-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    opacity: 0.5;
+  }
+
+  .hero-arrow-left {
+    left: 10px;
+  }
+
+  .hero-arrow-right {
+    right: 10px;
+  }
+
+  /* Reducimos márgenes y tamaños para que el contenido encaje en menos altura */
   .hero-logo {
-    max-width: 240px;
-  }
-
-  .hero-description {
-    font-size: 15px;
-    margin-bottom: 32px;
-  }
-
-  .hero-btn {
-    padding: 12px 28px;
-    font-size: 14px;
+    max-width: 180px;
+    margin-bottom: 15px;
   }
 
   .hero-location {
-    font-size: 12px;
-    padding: 6px 15px;
+    font-size: 11px;
+    padding: 5px 12px;
+    margin-bottom: 16px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    margin-bottom: 24px;
+  }
+
+  .hero-btn {
+    padding: 10px 24px;
+    font-size: 13px;
+  }
+
+  .hero-dots {
+    bottom: 20px;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .hero-logo {
-    max-width: 190px;
-    margin-bottom: 18px;
+  .hero {
+    /* En celulares más pequeños, bajamos a 50% de la pantalla */
+    height: 50vh;
+    min-height: 380px;
   }
 
+  .hero-logo {
+    max-width: 140px;
+    margin-bottom: 12px;
+  }
+
+  /* Si el espacio vertical es crítico, ocultamos la descripción para que no sature */
   .hero-description {
-    font-size: 14px;
-    letter-spacing: 0.1em;
+    display: none;
+  }
+
+  .hero-location {
+    margin-bottom: 12px;
   }
 
   .hero-btn {
-    padding: 11px 24px;
-    font-size: 13px;
+    padding: 8px 18px;
+    font-size: 12px;
+  }
+
+  .hero-arrow {
+    opacity: 0.35;
   }
 }

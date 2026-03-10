@@ -185,89 +185,112 @@
 
 @media screen and (max-width: 768px) {
   .reuniones {
-    padding: 60px 20px;
+    padding: 50px 16px;
   }
 
   .reuniones-title {
-    font-size: 2.2rem;
-    margin-bottom: 40px;
+    font-size: 2rem;
+    margin-bottom: 28px;
   }
 
+  .reuniones-grid {
+    gap: 16px;
+  }
+
+  /* Cards más chicas en general */
   .reunion-card {
-    padding: 30px 20px;
+    padding: 16px;
   }
 
+  /* Menos espacio entre título, línea naranja y el día */
   .reunion-card h3 {
-    font-size: 1.6rem;
-    margin-bottom: 25px;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    padding-bottom: 10px;
   }
 
+  .schedule-item {
+    margin-bottom: 12px;
+  }
+
+  /* Ícono y día en la misma línea, a la izquierda */
   .schedule-day {
-    flex-direction: column;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
     gap: 8px;
+    margin-bottom: 8px;
   }
 
+  /* Ícono de calendario más chico */
   .day-icon {
-    width: 35px;
-    height: 35px;
-    padding: 7px;
+    width: 26px;
+    height: 26px;
+    padding: 4px;
   }
 
   .schedule-day h4 {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
+    text-align: left;
+    margin: 0;
+  }
+
+  /* Renglones más compactos */
+  .schedule-times {
+    gap: 6px;
   }
 
   .time-wrapper {
-    padding: 12px 15px;
-  }
-
-  .time-icon {
-    width: 40px;
-    height: 40px;
-    padding: 7px;
-  }
-
-  .time {
-    font-size: 16px;
-  }
-
-  .activity {
-    font-size: 14px;
-  }
-
-  .section-divider {
-    height: 200px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .reuniones {
-    padding: 50px 15px;
-  }
-
-  .reuniones-title {
-    font-size: 1.9rem;
-  }
-
-  .reunion-card {
-    padding: 25px 15px;
-  }
-
-  .time-wrapper {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8px 12px;
+    border-radius: 8px;
     gap: 10px;
   }
 
   .time-icon {
-    align-self: center;
+    width: 28px;
+    height: 28px;
+    padding: 4px;
+    border-radius: 6px;
+    flex-shrink: 0;
   }
 
+  /* Contenedor de texto: Actividad izq, Hora der */
   .time-info {
+    flex: 1;
+    flex-direction: row !important;
     align-items: center;
+    justify-content: space-between !important;
+    gap: 8px;
+  }
+
+  .activity {
+    font-size: 13px;
+    order: 1;
+    text-align: left;
+  }
+
+  .time {
+    font-size: 13px;
+    font-weight: 700;
+    order: 2;
+    white-space: nowrap;
+    margin-left: 0;
   }
 
   .section-divider {
-    height: 150px;
+    height: 180px;
+  }
+}
+
+/* Limpiamos cualquier regla conflictiva en móviles pequeños */
+@media screen and (max-width: 480px) {
+  .reuniones {
+    padding: 40px 12px;
+  }
+
+  .section-divider {
+    height: 130px;
   }
 }

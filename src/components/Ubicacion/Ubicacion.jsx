@@ -1,6 +1,6 @@
 import './Ubicacion.css'
 import GoogleMap from '../Map/GoogleMap'
-import iglesiaImg from '../../assets/images/Iglesia.png'
+import iglesiaImg from '../../assets/images/FotoIglesiaFrente.png'
 import UbicacionIcon from '../../assets/icons/Ubicacion.png'
 import IGIcon from '../../assets/icons/IG.png'
 

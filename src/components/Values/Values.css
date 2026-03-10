@@ -11,7 +11,7 @@
 .values-title {
   font-size: 2.5rem;
   color: var(--text-color);
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
   font-weight: 600;
   margin-bottom: 15px;
 }
@@ -19,11 +19,10 @@
 .values-subtitle {
   font-size: 16px;
   color: var(--text-light);
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
   font-style: italic;
 }
 
-/* Grid: 4 en la primera fila, 3 centrados en la segunda */
 .values-grid {
   display: flex;
   flex-wrap: wrap;
@@ -41,7 +40,6 @@
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  /* Entrada escalonada */
   opacity: 0;
   animation: fadeInUp 0.5s ease forwards;
   animation-delay: calc(var(--i) * 80ms);
@@ -70,8 +68,7 @@
   border-radius: 50%;
   background: white;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-    box-shadow 0.35s ease;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
   z-index: 1;
 }
 
@@ -82,7 +79,6 @@
   transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Halo de luz detrás del ícono */
 .value-glow {
   position: absolute;
   inset: -4px;
@@ -94,49 +90,62 @@
   transform: scale(0.85);
 }
 
-.value-item:hover .value-icon-wrap {
-  transform: translateY(-6px) scale(1.1);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+/* Hover solo en desktop */
+@media (hover: hover) {
+  .value-item:hover .value-icon-wrap {
+    transform: translateY(-6px) scale(1.1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+  }
+
+  .value-item:hover .value-icon-img {
+    transform: scale(1.05);
+  }
+
+  .value-item:hover .value-glow {
+    opacity: 0.18;
+    transform: scale(1.15);
+  }
+
+  .value-item:hover .value-cloud {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+
+  .value-item:nth-child(1):hover .value-cloud,
+  .value-item:nth-child(2):hover .value-cloud {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+
+  .value-item:nth-child(6):hover .value-cloud,
+  .value-item:nth-child(7):hover .value-cloud {
+    transform: translateX(0) translateY(0) scale(1);
+  }
 }
 
-.value-item:hover .value-icon-img {
-  transform: scale(1.05);
-}
-
-.value-item:hover .value-glow {
-  opacity: 0.18;
-  transform: scale(1.15);
-}
-
-/* --- Nube / Tooltip --- */
+/* --- Nube desktop --- */
 .value-cloud {
   position: absolute;
-  top: calc(100% + 14px);
+  top: calc(100% + 18px);
   left: 50%;
   transform: translateX(-50%) translateY(-8px) scale(0.92);
   width: 340px;
   background: white;
   border-radius: 22px;
   padding: 30px 28px 26px;
-  box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.13),
-    0 4px 16px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.13), 0 4px 16px rgba(0, 0, 0, 0.07);
   opacity: 0;
   pointer-events: none;
-  transition:
-    opacity 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+  transition: opacity 0.28s cubic-bezier(0.4, 0, 0.2, 1),
     transform 0.32s cubic-bezier(0.34, 1.4, 0.64, 1);
   z-index: 100;
   text-align: center;
   overflow: hidden;
 }
 
-/* Borde superior de color */
 .value-cloud::before {
   content: '';
   position: absolute;
   bottom: 0;
-  top: auto;
   left: 0;
   right: 0;
   height: 4px;
@@ -144,11 +153,9 @@
   background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
 }
 
-/* Colita de la nube — posicionada relativa al ícono, no a la nube */
 .cloud-tail {
   position: absolute;
   top: -10px;
-  bottom: auto;
   left: 50%;
   transform: translateX(-50%);
   width: 20px;
@@ -157,36 +164,25 @@
   clip-path: polygon(50% 0, 0 100%, 100% 100%);
 }
 
-.value-item:hover .value-cloud {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0) scale(1);
-}
-
-/* Ítems del extremo izquierdo: nube se desplaza a la derecha */
+/* Extremo izquierdo */
 .value-item:nth-child(1) .value-cloud,
 .value-item:nth-child(2) .value-cloud {
   left: -10px;
-  transform: translateX(0) translateY(8px) scale(0.92);
+  transform: translateX(0) translateY(-8px) scale(0.92);
 }
 
 .value-item:nth-child(1) .cloud-tail,
 .value-item:nth-child(2) .cloud-tail {
-  /* centrar la colita sobre el ícono (36px = mitad del ícono 72px) */
   left: 46px;
   transform: none;
 }
 
-.value-item:nth-child(1):hover .value-cloud,
-.value-item:nth-child(2):hover .value-cloud {
-  transform: translateX(0) translateY(0) scale(1);
-}
-
-/* Ítems del extremo derecho: nube se desplaza a la izquierda */
+/* Extremo derecho */
 .value-item:nth-child(6) .value-cloud,
 .value-item:nth-child(7) .value-cloud {
   left: auto;
   right: -10px;
-  transform: translateX(0) translateY(8px) scale(0.92);
+  transform: translateX(0) translateY(-8px) scale(0.92);
 }
 
 .value-item:nth-child(6) .cloud-tail,
@@ -196,14 +192,9 @@
   transform: none;
 }
 
-.value-item:nth-child(6):hover .value-cloud,
-.value-item:nth-child(7):hover .value-cloud {
-  transform: translateX(0) translateY(0) scale(1);
-}
-
-/* Contenido de la nube */
+/* Contenido nube */
 .cloud-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
   font-size: 24px;
   font-weight: 700;
   color: var(--text-color);
@@ -211,7 +202,7 @@
 }
 
 .cloud-description {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
   font-size: 17px;
   color: var(--text-light);
   line-height: 1.65;
@@ -220,7 +211,7 @@
 
 .cloud-reference {
   display: inline-block;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
   font-size: 15px;
   font-style: italic;
   font-weight: 600;
@@ -230,7 +221,8 @@
   border-radius: 20px;
 }
 
-/* --- Responsive --- */
+/* --- Mobile --- */
+/* --- Mobile --- */
 @media screen and (max-width: 768px) {
   .values {
     padding: 60px 0;
@@ -240,27 +232,15 @@
     font-size: 2rem;
   }
 
-  /* Grilla de íconos circulares, igual que desktop pero con click */
   .values-grid {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
     gap: 24px;
     padding-top: 20px;
     max-width: 100%;
   }
 
   .value-item {
-    flex-direction: column;
-    align-items: center;
-    background: transparent;
-    border-radius: 0;
-    padding: 0;
-    box-shadow: none;
     opacity: 1;
     animation: none;
-    position: relative;
   }
 
   .value-icon-wrap {
@@ -273,97 +253,89 @@
     height: 30px;
   }
 
-  /* Nube: misma lógica que desktop pero activada por clase .active */
-  .value-cloud {
-    position: absolute;
-    bottom: calc(100% + 14px);
-    left: 50%;
-    transform: translateX(-50%) translateY(8px) scale(0.92);
-    width: 260px;
-    padding: 22px 20px 18px;
-    background: white;
-    border-radius: 22px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.13), 0 4px 16px rgba(0, 0, 0, 0.07);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.28s cubic-bezier(0.4, 0, 0.2, 1),
-      transform 0.32s cubic-bezier(0.34, 1.4, 0.64, 1);
-    z-index: 100;
-    text-align: center;
-  }
-
-  .value-cloud::before {
-    display: block;
-    border-radius: 22px 22px 0 0;
-  }
-
-  .cloud-tail {
-    display: block;
-  }
-
-  .value-item.active .value-cloud {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0) scale(1);
-    pointer-events: auto;
-  }
-
-  /* Resetear todos los nth-child overrides de desktop */
-  .value-item:nth-child(n) .value-cloud {
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%) translateY(8px) scale(0.92);
-  }
-
-  .value-item.active:nth-child(n) .value-cloud {
-    transform: translateX(-50%) translateY(0) scale(1);
-  }
-
-  .value-item:nth-child(n) .cloud-tail {
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
-  }
-
-  /* Ícono activo: sube levemente */
   .value-item.active .value-icon-wrap {
     transform: translateY(-4px) scale(1.08);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     background: color-mix(in srgb, var(--accent-color) 12%, white);
   }
 
-  /* Deshabilitar hover en mobile */
-  .value-item:hover .value-icon-wrap {
-    transform: none;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  /* Ocultar nube desktop en mobile */
+  .value-cloud {
+    display: none;
   }
 
-  .value-item:hover .value-cloud {
-    opacity: 0;
-    transform: translateX(-50%) translateY(8px) scale(0.92);
+  /* Bottom Sheet (fijado a la pantalla, sin capa oscura) */
+  .values-mobile-panel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: white;
+    border-radius: 28px 28px 0 0;
+    padding: 16px 24px 40px;
+    /* Padding inferior para área segura */
+    text-align: center;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.15);
+    animation: slideUpPanel 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
-  .value-item.active:hover .value-cloud {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0) scale(1);
+  @keyframes slideUpPanel {
+    from {
+      transform: translateY(100%);
+    }
+
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  /* Handle (barrita superior) */
+  .panel-handle {
+    width: 40px;
+    height: 5px;
+    background-color: #e0e0e0;
+    border-radius: 3px;
+    margin: 0 auto 20px auto;
+  }
+
+  /* Ícono dentro del panel */
+  .panel-icon-wrap {
+    width: 54px;
+    height: 54px;
+    margin: 0 auto 16px auto;
+    background: color-mix(in srgb, var(--accent-color) 12%, white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .panel-icon-wrap img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
   }
 
   .cloud-title {
-    font-size: 17px;
+    font-size: 20px;
+    margin-bottom: 8px;
   }
 
   .cloud-description {
-    font-size: 13px;
+    font-size: 15px;
+    margin-bottom: 20px;
   }
 
   .cloud-reference {
-    font-size: 12px;
+    font-size: 13px;
+    padding: 8px 20px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .values-grid {
     gap: 20px;
-    padding-top: 20px;
   }
 
   .value-icon-wrap {
@@ -374,9 +346,5 @@
   .value-icon-img {
     width: 26px;
     height: 26px;
-  }
-
-  .value-cloud {
-    width: 230px;
   }
 }

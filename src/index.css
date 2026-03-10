@@ -1,20 +1,13 @@
-/* Reset y estilos globales */
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: var(--font-body);
-  line-height: 1.6;
-  color: var(--text-color);
-  background-color: #fff;
-}
-
-/* Variables CSS para colores y estilos consistentes */
 :root {
   --primary-color: #1b3a2d;
   --secondary-color: #2c4a3e;
@@ -34,19 +27,38 @@ body {
   --font-body: 'Syne', sans-serif;
 }
 
-/* Contenedor principal */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .App {
   min-height: 100vh;
 }
 
-/* Estilos para contenedores generales */
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Utilidades */
 .text-center {
   text-align: center;
 }
@@ -73,13 +85,29 @@ body {
 }
 
 .btn-primary:hover {
-  /* Updated hover color to darker green */
   background-color: #316d55;
   transform: translateY(-2px);
   box-shadow: var(--shadow-hover);
 }
 
-/* Responsive */
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0 15px;
@@ -89,9 +117,4 @@ body {
     padding: 10px 20px;
     font-size: 14px;
   }
-}
-
-/* Scroll suave */
-html {
-  scroll-behavior: smooth;
 }

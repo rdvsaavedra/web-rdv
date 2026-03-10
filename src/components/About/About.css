@@ -16,37 +16,13 @@
   padding-right: 20px;
 }
 
-.about-intro-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.about-intro-accent {
-  width: 24px;
-  height: 24px;
-  border-radius: 4px;
-}
-
-.about-intro {
-  font-size: 18px;
-  color: var(--accent-color);
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  font-style: italic;
-  margin: 0;
-  position: relative;
-}
-
 .about-title {
   font-size: 2.5rem;
   color: var(--text-color);
   margin-bottom: 40px;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-display);
   font-weight: 700;
   line-height: 1.1;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .title-highlight {
@@ -54,8 +30,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  position: relative;
-  font-size: 0.9em;
 }
 
 .about-description {
@@ -65,7 +39,7 @@
 .description-paragraph {
   font-size: 17px;
   color: var(--text-light);
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
   line-height: 1.8;
   margin-bottom: 25px;
   text-align: justify;
@@ -98,68 +72,7 @@
   font-weight: 600;
 }
 
-.cta-section {
-  text-align: left;
-}
-
-.instagram-btn {
-  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-  color: white;
-  border: none;
-  padding: 16px 32px;
-  border-radius: 50px;
-  font-size: 16px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  box-shadow: 0 6px 20px rgba(49, 109, 85, 0.2);
-  position: relative;
-  overflow: hidden;
-}
-
-.instagram-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
-}
-
-.instagram-btn:hover::before {
-  left: 100%;
-}
-
-.instagram-btn:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 12px 30px rgba(49, 109, 85, 0.4);
-}
-
-.btn-text {
-  font-size: 14px;
-  opacity: 0.9;
-}
-
-.btn-handle {
-  font-size: 16px;
-  font-weight: 700;
-}
-
-.cta-subtitle {
-  font-size: 14px;
-  color: var(--text-light);
-  font-family: 'Poppins', sans-serif;
-  margin-top: 12px;
-  font-style: italic;
-}
-
+/* Imagen */
 .about-image {
   position: relative;
 }
@@ -169,23 +82,12 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
-}
-
-.image-wrapper:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
 }
 
 .about-image img {
   width: 100%;
   height: auto;
   display: block;
-  transition: transform 0.3s ease;
-}
-
-.image-wrapper:hover img {
-  transform: scale(1.05);
 }
 
 .image-overlay {
@@ -224,162 +126,140 @@
 .overlay-text p {
   color: white;
   font-size: 14px;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
   font-weight: 500;
   margin: 0;
   text-align: center;
 }
 
+/* Visión y Misión */
 .vision-mission {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 32px;
   padding: 60px 0;
-  border-top: 2px solid var(--bg-gray);
-  position: relative;
+  border-top: 1px solid var(--bg-gray);
   max-width: 900px;
   margin: 0 auto;
 }
 
-.vision-mission::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 4px;
-  background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
-  border-radius: 2px;
-}
-
 .vm-item {
   background: white;
-  border-radius: 15px;
-  padding: 30px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.vm-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border-top: 3px solid var(--accent-color);
 }
 
 .vm-item.vision {
-  border-left: 4px solid var(--secondary-color);
+  border-top-color: var(--primary-color);
 }
 
 .vm-item.mission {
-  border-left: 4px solid var(--accent-color);
+  border-top-color: var(--accent-color);
 }
 
 .vm-header {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 30px;
+  gap: 12px;
+  margin-bottom: 24px;
 }
 
 .vm-icon {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
 }
 
 .vm-header h3 {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   color: var(--text-color);
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-display);
   font-weight: 700;
 }
 
-.vm-point {
-  margin-bottom: 25px;
-  padding: 20px;
-  background: var(--bg-light);
-  border-radius: 12px;
-  border-left: 4px solid var(--accent-color);
-}
-
-.vm-point h4 {
-  font-size: 1.1rem;
-  color: var(--secondary-color);
-  margin-bottom: 10px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-}
-
-.vm-point p {
-  font-size: 15px;
-  color: var(--text-light);
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.6;
+.vm-quote {
   margin: 0;
+  padding: 0;
+  border: none;
+  font-family: var(--font-body);
+  font-style: normal;
+}
+
+.vm-quote p {
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+.vm-quote sup {
+  font-size: 10px;
+  color: var(--accent-color);
+  font-weight: 700;
+  margin-right: 2px;
+}
+
+.vm-quote cite {
+  display: block;
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-top: 10px;
 }
 
 .mission-subtitle {
-  font-size: 16px;
-  color: var(--accent-color);
-  font-family: 'Poppins', sans-serif;
-  margin-bottom: 20px;
-  text-align: center;
+  font-size: 12px;
+  color: var(--text-light);
+  font-family: var(--font-body);
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .mission-quote {
-  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-  border-left: 5px solid var(--accent-color);
-  padding: 25px;
-  border-radius: 15px;
-  font-family: 'Poppins', sans-serif;
+  background: var(--bg-light);
+  border-left: 3px solid var(--accent-color);
+  padding: 18px 20px;
+  border-radius: 12px;
+  font-family: var(--font-body);
   font-style: italic;
+  font-size: 14px;
   line-height: 1.8;
-  position: relative;
+  color: var(--text-light);
   margin: 0;
 }
 
-.mission-quote::before {
-  content: '"';
-  position: absolute;
-  top: -5px;
-  left: 10px;
-  font-size: 40px;
-  color: var(--accent-color);
-  opacity: 0.3;
-}
-
 .mission-quote mark {
-  background: linear-gradient(120deg, rgba(168, 221, 122, 0.2), rgba(168, 221, 122, 0.3));
-  color: var(--accent-color);
-  font-weight: 600;
-  padding: 2px 4px;
-  border-radius: 4px;
+  background: transparent;
+  color: var(--primary-color);
+  font-weight: 700;
+  font-style: normal;
 }
 
 .mission-quote cite {
   display: block;
   text-align: right;
-  margin-top: 15px;
-  font-size: 14px;
-  color: var(--text-light);
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--accent-color);
   font-weight: 600;
+  font-style: italic;
 }
 
-/* ===================== */
-/* HERO — tipografía nueva */
-/* ===================== */
-
+/* Hero catarata */
 .about-hero {
   position: relative;
-  height: 600px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   background-image: url('../../assets/images/Catarata.png');
   background-size: cover;
-  background-position: center;
+  background-position: center 30%;
   background-attachment: fixed;
 }
 
@@ -408,9 +288,8 @@
   gap: 16px;
 }
 
-/* Eyebrow — fino, espaciado, uppercase */
 .hero-eyebrow {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 300;
   letter-spacing: 0.4em;
@@ -421,9 +300,8 @@
   animation: heroFadeUp 1s 0.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-/* VIVA — outline enorme */
 .hero-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(5rem, 14vw, 10rem);
   font-weight: 900;
   letter-spacing: 0.25em;
@@ -436,7 +314,6 @@
   animation: heroFadeUp 1s 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-/* Línea decorativa */
 .hero-divider {
   width: 50px;
   height: 2px;
@@ -484,13 +361,18 @@
 
   .vision-mission {
     grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 60px 0;
+    gap: 20px;
+    padding: 40px 0;
+  }
+
+  .vm-item {
+    padding: 24px;
   }
 
   .about-hero {
-    height: 500px;
+    height: 300px;
     background-attachment: scroll;
+    background-position: center 30%;
   }
 
   .hero-eyebrow {
@@ -517,17 +399,13 @@
     padding-left: 10px;
   }
 
-  .instagram-btn {
-    padding: 12px 24px;
-    font-size: 14px;
-  }
-
   .vm-item {
-    padding: 25px;
+    padding: 20px;
   }
 
   .about-hero {
-    height: 400px;
+    height: 220px;
+    background-position: center 30%;
   }
 
   .hero-eyebrow {

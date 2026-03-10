@@ -5,6 +5,8 @@ import Reuniones from './components/Reuniones/Reuniones'
 import About from './components/About/About'
 import Values from './components/Values/Values'
 import Footer from './components/Footer/Footer'
+import Equipo from './components/Equipo/Equipo'
+import VidaFamilia from './components/VidaFamilia/VidaFamilia'
 
 function App() {
   return (
@@ -12,8 +14,10 @@ function App() {
       <Header />
       <Hero />
       <About />
+      <Equipo />
       <Values />
       <Reuniones />
+      <VidaFamilia />
       <Ubicacion />
       <Footer />
     </div>
