@@ -1,10 +1,7 @@
 import './About.css'
-import pastorImg from '../../assets/images/Pastor.png'
 import visionIcon from '../../assets/icons/Vision.png'
 import misionIcon from '../../assets/icons/Mision.png'
-import comunidadIcon from '../../assets/icons/Comunidad.png'
-import oracionIcon from '../../assets/icons/Oracion.png'
-import palabraIcon from '../../assets/icons/Palabra.png'
+
 
 const About = () => {
   return (

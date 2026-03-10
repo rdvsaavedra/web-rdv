@@ -1,7 +1,7 @@
 "use client"
 
 import "./Reuniones.css"
-import chicosImg from "../../assets/images/Chicos.png"
+import separadorImg from "../../assets/images/Separador.png"
 import calendarioIcon from "../../assets/icons/Calendario.png"
 import bibliaIcon from "../../assets/icons/BibliaBlack.png"
 import oracionIcon from "../../assets/icons/OracionBlack.png"
@@ -121,7 +121,7 @@ const Reuniones = () => {
       </section>
 
       <div className="section-divider">
-        <img src={chicosImg} alt="Jóvenes en reunión" className="divider-image" />
+        <img src={separadorImg} alt="Jóvenes en reunión" className="divider-image" />
       </div>
     </>
   )

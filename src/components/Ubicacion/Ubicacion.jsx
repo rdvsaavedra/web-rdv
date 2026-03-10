@@ -2,7 +2,6 @@ import './Ubicacion.css'
 import GoogleMap from '../Map/GoogleMap'
 import iglesiaImg from '../../assets/images/FotoIglesiaFrente.png'
 import UbicacionIcon from '../../assets/icons/Ubicacion.png'
-import IGIcon from '../../assets/icons/IG.png'
 
 const Ubicacion = () => {
   return (
@@ -36,12 +35,8 @@ const Ubicacion = () => {
               <span className="direccion-arrow">→</span>
             </a>
 
-            <div className="iglesia-image" onClick={() => window.open('https://www.instagram.com/iglesiarenuevodevida/?hl=es-la', '_blank')}>
+            <div className="iglesia-image">
               <img src={iglesiaImg} alt="Iglesia Renuevo de Vida" />
-              <div className="iglesia-overlay">
-                <img src={IGIcon} alt="Instagram" className="iglesia-overlay-icon" />
-                <span className="iglesia-overlay-text">@iglesiarenuevodevida</span>
-              </div>
             </div>
 
           </div>

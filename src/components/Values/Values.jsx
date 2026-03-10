@@ -23,30 +23,23 @@ const Values = () => {
   const panelRef = useRef(null)
 
   const handleClick = (index, e) => {
-    // Evitamos que el click en el ítem dispare el evento del document inmediatamente
     if (e) e.stopPropagation()
     setActiveIndex(activeIndex === index ? null : index)
   }
 
   const activeValue = activeIndex !== null ? values[activeIndex] : null
 
-  // Efecto para cerrar el panel al scrollear o clickear fuera
   useEffect(() => {
     if (activeIndex === null) return
 
     const handleOutsideClick = (event) => {
-      // Si el click fue fuera del panel móvil, lo cerramos
       if (panelRef.current && !panelRef.current.contains(event.target)) {
         setActiveIndex(null)
       }
     }
 
-    const handleScroll = () => {
-      // Cerramos al hacer scroll
-      setActiveIndex(null)
-    }
+    const handleScroll = () => setActiveIndex(null)
 
-    // Escuchamos clicks en todo el documento y el evento scroll de la ventana
     document.addEventListener('click', handleOutsideClick)
     document.addEventListener('touchstart', handleOutsideClick)
     window.addEventListener('scroll', handleScroll, { passive: true })
@@ -78,7 +71,6 @@ const Values = () => {
                 <img src={value.icon} alt={value.title} className="value-icon-img" />
                 <div className="value-glow" />
               </div>
-              {/* Nube para versión Desktop */}
               <div className="value-cloud">
                 <div className="cloud-tail" />
                 <h3 className="cloud-title">{value.title}</h3>
@@ -90,15 +82,12 @@ const Values = () => {
         </div>
       </div>
 
-      {/* Bottom Sheet para Mobile (sin overlay oscuro) */}
       {activeValue && (
         <div className="values-mobile-panel" ref={panelRef}>
           <div className="panel-handle" />
-
           <div className="panel-icon-wrap">
             <img src={activeValue.icon} alt={activeValue.title} />
           </div>
-
           <h3 className="cloud-title">{activeValue.title}</h3>
           <p className="cloud-description">{activeValue.description}</p>
           <span className="cloud-reference">{activeValue.reference}</span>

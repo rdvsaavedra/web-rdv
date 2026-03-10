@@ -7,8 +7,12 @@ import foto1 from '../../assets/images/FotoBannerHero1.png'
 import foto2 from '../../assets/images/FotoBannerHero2.png'
 import foto3 from '../../assets/images/FotoBannerHero3.png'
 import foto4 from '../../assets/images/FotoBannerHero4.png'
+// 1. Agregamos las importaciones de las nuevas fotos
+import foto5 from '../../assets/images/FotoBannerHero5.png'
+import foto6 from '../../assets/images/FotoBannerHero6.png'
 
-const slides = [foto1, foto2, foto3, foto4]
+// 2. Las añadimos al arreglo de slides
+const slides = [foto1, foto2, foto3, foto4, foto5, foto6]
 
 const Hero = () => {
   const [current, setCurrent] = useState(0)

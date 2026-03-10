@@ -118,3 +118,17 @@ body {
     font-size: 14px;
   }
 }
+
+/* Protección de imágenes */
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+}
+
+.social-btn img,
+.nav-logo img,
+.footer-logo img {
+  pointer-events: auto;
+}

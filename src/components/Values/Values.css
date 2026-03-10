@@ -221,7 +221,12 @@
   border-radius: 20px;
 }
 
-/* --- Mobile --- */
+/* --- REGLA CLAVE PARA SEPARAR DESKTOP DE MOBILE --- */
+/* Oculta el panel móvil por defecto en resoluciones grandes (desktop) */
+.values-mobile-panel {
+  display: none;
+}
+
 /* --- Mobile --- */
 @media screen and (max-width: 768px) {
   .values {
@@ -266,6 +271,7 @@
 
   /* Bottom Sheet (fijado a la pantalla, sin capa oscura) */
   .values-mobile-panel {
+    display: block; /* REGLA CLAVE: Muestra el panel solo en pantallas móviles */
     position: fixed;
     bottom: 0;
     left: 0;

@@ -1,15 +1,17 @@
 import './Equipo.css'
+import alePhoto from '../../assets/images/EquipoAle.png'
+import gusPhoto from '../../assets/images/EquipoGus.png'
 
 const miembros = [
     {
-        nombre: 'Nombre Apellido',
+        nombre: 'Alejandro Casal',
         rol: 'Pastor Principal',
-        foto: null,
+        foto: alePhoto,
     },
     {
-        nombre: 'Nombre Apellido',
-        rol: 'Pastor de Jóvenes',
-        foto: null,
+        nombre: 'Gus Gus',
+        rol: 'Líder',
+        foto: gusPhoto,
     },
 ]
 
