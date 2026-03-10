@@ -77,12 +77,17 @@
   border-radius: 12px;
 }
 
-.day-icon {
-  width: 40px;
-  height: 40px;
-  padding: 8px;
+/* Nuevos Wrappers */
+.day-icon-wrap {
+  width: 34px;
+  height: 34px;
   background-color: var(--accent-color);
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: white;
   box-shadow: 0 4px 15px rgba(232, 164, 74, 0.2);
 }
 
@@ -121,14 +126,18 @@
 
 .time-wrapper:hover {}
 
-.time-icon {
-  width: 45px;
-  height: 45px;
-  padding: 8px;
-  background-color: white;
-  border-radius: 12px;
+/* Nuevos Wrappers */
+.time-icon-wrap {
+  width: 38px;
+  height: 38px;
+  background: white;
+  border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+  color: var(--text-color);
 }
 
 .time-info {
@@ -221,11 +230,10 @@
     margin-bottom: 8px;
   }
 
-  /* Ícono de calendario más chico */
-  .day-icon {
+  /* Ícono de calendario más chico (actualizado al wrap) */
+  .day-icon-wrap {
     width: 26px;
     height: 26px;
-    padding: 4px;
   }
 
   .schedule-day h4 {
@@ -248,10 +256,10 @@
     gap: 10px;
   }
 
-  .time-icon {
+  /* Ícono de tiempo más chico (actualizado al wrap) */
+  .time-icon-wrap {
     width: 28px;
     height: 28px;
-    padding: 4px;
     border-radius: 6px;
     flex-shrink: 0;
   }

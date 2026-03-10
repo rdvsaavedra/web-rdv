@@ -1,21 +1,17 @@
 import { useState, useEffect, useRef } from 'react'
 import './Values.css'
-import graciaIcon from '../../assets/icons/Gracia.png'
-import espiritualidadIcon from '../../assets/icons/Espiritualidad.png'
-import pasionIcon from '../../assets/icons/Pasion.png'
-import trabajoEquipoIcon from '../../assets/icons/TrabajoEnEquipo.png'
-import organizacionIcon from '../../assets/icons/Organizacion.png'
-import creatividadIcon from '../../assets/icons/Creatividad.png'
-import familiaridadIcon from '../../assets/icons/Familiaridad.png'
+import { HandHeart, Feather, Flame, Users, ListChecks, Palette, Home } from 'lucide-react'
+
+const ICON_SIZE = 30
 
 const values = [
-  { icon: graciaIcon, title: 'Gracia', description: 'Enfocados en la bondad increíble y la misericordia suprema', reference: 'Salmo 23:6a' },
-  { icon: espiritualidadIcon, title: 'Espiritualidad', description: 'Buscando permanentemente la intimidad espiritual con el Espíritu', reference: 'Salmo 23:6a' },
-  { icon: pasionIcon, title: 'Pasión', description: 'Con curiosidad e intensidad por la Persona de Jesús Señor', reference: 'Jn 6:67a' },
-  { icon: trabajoEquipoIcon, title: 'Trabajo en equipo', description: 'Como filosofía fundamental que enriquece nuestros ministerios', reference: 'Ecl 4:9-10' },
-  { icon: organizacionIcon, title: 'Organización', description: 'Sirviendo con claridad y orden', reference: '1 Co 14:40' },
-  { icon: creatividadIcon, title: 'Creatividad', description: 'Buscando hacer las cosas de una manera nueva y fresca', reference: '1 Cr 23:5-6a' },
-  { icon: familiaridadIcon, title: 'Familiaridad', description: 'Informando responsablemente la unidad y el afecto mutuo', reference: 'Ef 2:19' },
+  { icon: <HandHeart size={ICON_SIZE} />, title: 'Gracia', description: 'Enfocados en la bondad increíble y la misericordia suprema', reference: 'Salmo 23:6a' },
+  { icon: <Feather size={ICON_SIZE} />, title: 'Espiritualidad', description: 'Buscando permanentemente la intimidad espiritual con el Espíritu', reference: 'Salmo 23:6a' },
+  { icon: <Flame size={ICON_SIZE} />, title: 'Pasión', description: 'Con curiosidad e intensidad por la Persona de Jesús Señor', reference: 'Jn 6:67a' },
+  { icon: <Users size={ICON_SIZE} />, title: 'Trabajo en equipo', description: 'Como filosofía fundamental que enriquece nuestros ministerios', reference: 'Ecl 4:9-10' },
+  { icon: <ListChecks size={ICON_SIZE} />, title: 'Organización', description: 'Sirviendo con claridad y orden', reference: '1 Co 14:40' },
+  { icon: <Palette size={ICON_SIZE} />, title: 'Creatividad', description: 'Buscando hacer las cosas de una manera nueva y fresca', reference: '1 Cr 23:5-6a' },
+  { icon: <Home size={ICON_SIZE} />, title: 'Familiaridad', description: 'Informando responsablemente la unidad y el afecto mutuo', reference: 'Ef 2:19' },
 ]
 
 const Values = () => {
@@ -68,7 +64,7 @@ const Values = () => {
               onClick={(e) => handleClick(index, e)}
             >
               <div className="value-icon-wrap">
-                <img src={value.icon} alt={value.title} className="value-icon-img" />
+                {value.icon}
                 <div className="value-glow" />
               </div>
               <div className="value-cloud">
@@ -86,7 +82,7 @@ const Values = () => {
         <div className="values-mobile-panel" ref={panelRef}>
           <div className="panel-handle" />
           <div className="panel-icon-wrap">
-            <img src={activeValue.icon} alt={activeValue.title} />
+            {activeValue.icon}
           </div>
           <h3 className="cloud-title">{activeValue.title}</h3>
           <p className="cloud-description">{activeValue.description}</p>

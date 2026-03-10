@@ -1,17 +1,15 @@
 import { useState, useEffect } from 'react'
 import './Hero.css'
 import LogoImg from '../../assets/images/IglesiaLogoCompleto.png'
-import ubicacionIcon from '../../assets/icons/Ubicacion.png'
+import { MapPin } from 'lucide-react'
 
 import foto1 from '../../assets/images/FotoBannerHero1.png'
 import foto2 from '../../assets/images/FotoBannerHero2.png'
 import foto3 from '../../assets/images/FotoBannerHero3.png'
 import foto4 from '../../assets/images/FotoBannerHero4.png'
-// 1. Agregamos las importaciones de las nuevas fotos
 import foto5 from '../../assets/images/FotoBannerHero5.png'
 import foto6 from '../../assets/images/FotoBannerHero6.png'
 
-// 2. Las añadimos al arreglo de slides
 const slides = [foto1, foto2, foto3, foto4, foto5, foto6]
 
 const Hero = () => {
@@ -31,10 +29,6 @@ const Hero = () => {
     return () => clearInterval(timer)
   }, [])
 
-  useEffect(() => {
-    console.log('slide actual:', current)
-  }, [current])
-
   const handleReunionesClick = () => {
     document.getElementById('reuniones-section')?.scrollIntoView({ behavior: 'smooth' })
   }
@@ -42,7 +36,6 @@ const Hero = () => {
   return (
     <section id="inicio" className="hero">
 
-      {/* Carrusel */}
       <div className="hero-carousel">
         {slides.map((slide, index) => (
           <div
@@ -54,11 +47,9 @@ const Hero = () => {
         <div className="hero-overlay" />
       </div>
 
-      {/* Flechas */}
       <button className="hero-arrow hero-arrow-left" onClick={prev} aria-label="Anterior">‹</button>
       <button className="hero-arrow hero-arrow-right" onClick={next} aria-label="Siguiente">›</button>
 
-      {/* Dots */}
       <div className="hero-dots">
         {slides.map((_, index) => (
           <button
@@ -70,12 +61,11 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* Contenido */}
       <div className="hero-content">
         <div className="container">
           <div className="hero-text">
             <div className="hero-location">
-              <img src={ubicacionIcon} alt="Ubicación" className="hero-location-pin" />
+              <MapPin size={14} />
               <span>Buenos Aires, Argentina</span>
             </div>
             <img src={LogoImg} alt="Renuevo de vida" className="hero-logo" />

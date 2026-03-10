@@ -142,11 +142,10 @@
   animation: fadeInUp 0.8s 0.1s ease both;
 }
 
-.hero-location-pin {
-  width: 14px;
-  height: 14px;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
+.hero-location svg {
+  flex-shrink: 0;
+  color: white;
+  opacity: 0.9;
 }
 
 .hero-logo {

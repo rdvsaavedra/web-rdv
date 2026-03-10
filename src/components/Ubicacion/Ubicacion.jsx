@@ -1,7 +1,7 @@
 import './Ubicacion.css'
 import GoogleMap from '../Map/GoogleMap'
 import iglesiaImg from '../../assets/images/FotoIglesiaFrente.png'
-import UbicacionIcon from '../../assets/icons/Ubicacion.png'
+import { MapPin } from 'lucide-react'
 
 const Ubicacion = () => {
   return (
@@ -10,7 +10,7 @@ const Ubicacion = () => {
 
         <div className="ubicacion-header">
           <span className="ubicacion-eyebrow">
-            <img src={UbicacionIcon} alt="" className="eyebrow-icon" />
+            <MapPin size={13} />
             visitanos
           </span>
           <h2 className="ubicacion-title">Sumate a nuestras reuniones</h2>
@@ -25,7 +25,7 @@ const Ubicacion = () => {
               className="direccion-card"
             >
               <div className="direccion-icon-wrap">
-                <img src={UbicacionIcon} alt="Ubicación" className="ubicacion-pin-icon" />
+                <MapPin size={20} />
               </div>
               <div className="direccion-text">
                 <span className="direccion-label">Dirección</span>
@@ -38,7 +38,6 @@ const Ubicacion = () => {
             <div className="iglesia-image">
               <img src={iglesiaImg} alt="Iglesia Renuevo de Vida" />
             </div>
-
           </div>
 
           <div className="ubicacion-map">

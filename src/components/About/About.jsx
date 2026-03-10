@@ -1,64 +1,14 @@
 import './About.css'
-import visionIcon from '../../assets/icons/Vision.png'
-import misionIcon from '../../assets/icons/Mision.png'
-
+import { Lightbulb, Target } from 'lucide-react'
 
 const About = () => {
   return (
     <section id="about" className="about">
       <div className="container">
-        {/*
-        <div className="about-content">
-          <div className="about-text">
-            <h2 className="about-title">
-              Un lugar de <span className="title-highlight">fe</span> y{' '}
-              <span className="title-highlight">encuentro</span>
-            </h2>
-
-            <div className="about-description">
-              <p className="description-paragraph">
-                En nuestra iglesia <strong>creemos profundamente</strong> en la gracia transformadora de Dios.
-                Somos una comunidad que abraza a cada persona tal como es, ofreciendo un espacio
-                donde encontrarás <em>comprensión, esperanza y amor real</em> que trasciende cualquier
-                situación.
-              </p>
-              <p className="description-paragraph">
-                Creemos firmemente en el <strong>poder restaurador de Jesús</strong> y en Su capacidad
-                para renovar vidas, sanar heridas y transformar historias. No importa de dónde
-                vienes o por qué estás atravesando, aquí encontrarás personas genuinas que se
-                caracterizan por ser <span className="text-accent">familia</span>.
-              </p>
-            </div>
-          </div>
-
-          <div className="about-image">
-            <div className="image-wrapper">
-              <img src={pastorImg} alt="Pastor y congregación" />
-              <div className="image-overlay">
-                <div className="overlay-text">
-                  <div className="overlay-item">
-                    <img src={comunidadIcon} alt="Comunidad" />
-                    <p>Comunidad</p>
-                  </div>
-                  <div className="overlay-item">
-                    <img src={oracionIcon} alt="Oración" />
-                    <p>Oración</p>
-                  </div>
-                  <div className="overlay-item">
-                    <img src={palabraIcon} alt="Palabra" />
-                    <p>Palabra</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        */}
-
         <div className="vision-mission">
           <div className="vm-item vision">
             <div className="vm-header">
-              <img src={visionIcon} alt="Visión" className="vm-icon" />
+              <Lightbulb size={28} color="var(--primary-color)" />
               <h3>Visión</h3>
             </div>
             <div className="vm-content">
@@ -78,7 +28,7 @@ const About = () => {
 
           <div className="vm-item mission">
             <div className="vm-header">
-              <img src={misionIcon} alt="Misión" className="vm-icon" />
+              <Target size={28} color="var(--accent-color)" />
               <h3>Misión</h3>
             </div>
             <div className="vm-content">
@@ -95,17 +45,6 @@ const About = () => {
           </div>
         </div>
       </div>
-      {/*
-      <div className="about-hero">
-        <div className="about-hero-content">
-          <div className="hero-text-wrapper">
-            <p className="hero-eyebrow">Jesús, una fuente de agua</p>
-            <h1 className="hero-title">VIVA</h1>
-            <div className="hero-divider" />
-          </div>
-        </div>
-      </div>
-      */}
     </section>
   )
 }
