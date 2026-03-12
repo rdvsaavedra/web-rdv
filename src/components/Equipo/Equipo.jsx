@@ -3,21 +3,19 @@ import alePhoto from '../../assets/images/EquipoAle.png'
 import gusPhoto from '../../assets/images/EquipoGus.png'
 
 const miembros = [
-  {
-    nombre: 'Alejandro Casal',
-    rol: 'Pastor Principal',
-    foto: alePhoto,
-  },
-  {
-    nombre: 'Gustavo Lauriente',
-    rol: 'Líder',
-    foto: gusPhoto,
-  },
+  { nombre: 'Alejandro Casal', rol: 'Pastor Principal', foto: alePhoto },
+  { nombre: 'Gustavo Lauriente', rol: 'Líder', foto: gusPhoto },
 ]
 
 const Equipo = () => {
   return (
     <section className="equipo">
+      <div className="equipo-bg">
+        <div className="equipo-orb equipo-orb--1" />
+        <div className="equipo-orb equipo-orb--2" />
+        <div className="equipo-orb equipo-orb--3" />
+      </div>
+
       <div className="container">
         <h2 className="equipo-title">Equipo de Buenos Aires</h2>
 
@@ -30,13 +28,11 @@ const Equipo = () => {
                   : <div className="equipo-foto-placeholder" />
                 }
               </div>
-
               <h3 className="equipo-nombre">{miembro.nombre}</h3>
               <p className="equipo-rol">{miembro.rol}</p>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   )

@@ -1,6 +1,31 @@
 .reuniones {
   padding: 80px 0 120px;
-  background-color: var(--bg-light);
+  background: linear-gradient(160deg, #eae4d8 0%, #f5f0e8 50%, #e8e0d4 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Orbs de fondo para que el glassmorphism se note */
+.reuniones::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(27, 58, 45, 0.12) 0%, transparent 70%);
+  top: -200px;
+  left: -200px;
+  pointer-events: none;
+}
+
+.reuniones::after {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(232, 164, 74, 0.1) 0%, transparent 70%);
+  bottom: -100px;
+  right: -100px;
+  pointer-events: none;
 }
 
 .reuniones-title {
@@ -10,6 +35,8 @@
   margin-bottom: 50px;
   font-family: var(--font-display);
   font-weight: 700;
+  position: relative;
+  z-index: 1;
 }
 
 .reuniones-grid {
@@ -18,23 +45,88 @@
   gap: 30px;
   max-width: var(--max-width);
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .reunion-card {
-  background-color: white;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.75) 0%,
+    rgba(255, 255, 255, 0.55) 100%
+  );
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
   padding: 40px 30px;
-  border-radius: 20px;
-  box-shadow: var(--shadow);
-  border-top: 4px solid var(--accent-color);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.02);
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  transition: var(--transition);
+  transition:
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.35s ease;
+  overflow: hidden;
+}
+
+/* Brillo superior */
+.reunion-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(232, 164, 74, 0.4) 20%,
+    rgba(232, 164, 74, 1) 50%,
+    rgba(232, 164, 74, 0.4) 80%,
+    transparent 100%
+  );
+  border-radius: 24px 24px 0 0;
+  transition: opacity 0.35s ease;
+}
+
+/* Destello interno al hacer hover */
+.reunion-card::after {
+  content: '';
+  position: absolute;
+  top: -60%;
+  left: -60%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(232, 164, 74, 0.08) 0%,
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.reunion-card:hover::after {
+  opacity: 1;
 }
 
 .reunion-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-hover);
+  transform: translateY(-10px);
+  border-color: rgba(232, 164, 74, 0.4);
+  box-shadow:
+    0 24px 48px rgba(0, 0, 0, 0.1),
+    0 8px 16px rgba(0, 0, 0, 0.06),
+    0 0 0 1px rgba(232, 164, 74, 0.2),
+    0 0 40px rgba(232, 164, 74, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 
 .reunion-card h3 {
@@ -49,15 +141,16 @@
 }
 
 .reunion-card h3::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 50px;
   height: 3px;
-  background-color: var(--accent-color);
+  background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
   border-radius: 2px;
+  box-shadow: 0 0 8px rgba(232, 164, 74, 0.6);
 }
 
 .schedule-item {
@@ -77,18 +170,17 @@
   border-radius: 12px;
 }
 
-/* Nuevos Wrappers */
 .day-icon-wrap {
   width: 34px;
   height: 34px;
-  background-color: var(--accent-color);
+  background: linear-gradient(135deg, var(--accent-color), #d4943a);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   color: white;
-  box-shadow: 0 4px 15px rgba(232, 164, 74, 0.2);
+  box-shadow: 0 4px 15px rgba(232, 164, 74, 0.4);
 }
 
 .schedule-day h4 {
@@ -116,23 +208,20 @@
   align-items: center;
   justify-content: flex-start;
   gap: 15px;
-  background-color: var(--bg-light);
+  background: rgba(245, 240, 232, 0.7);
   padding: 15px 20px;
   border-radius: 15px;
-  transition: var(--transition);
-  border: 1px solid transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
   width: 100%;
+  transition: background 0.2s ease, border-color 0.2s ease;
 }
 
-.time-wrapper:hover {}
-
-/* Nuevos Wrappers */
 .time-icon-wrap {
   width: 38px;
   height: 38px;
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -177,15 +266,8 @@
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .fade-in {
@@ -206,12 +288,10 @@
     gap: 16px;
   }
 
-  /* Cards más chicas en general */
   .reunion-card {
     padding: 16px;
   }
 
-  /* Menos espacio entre título, línea naranja y el día */
   .reunion-card h3 {
     font-size: 1.2rem;
     margin-bottom: 8px;
@@ -222,7 +302,6 @@
     margin-bottom: 12px;
   }
 
-  /* Ícono y día en la misma línea, a la izquierda */
   .schedule-day {
     flex-direction: row !important;
     justify-content: flex-start !important;
@@ -230,7 +309,6 @@
     margin-bottom: 8px;
   }
 
-  /* Ícono de calendario más chico (actualizado al wrap) */
   .day-icon-wrap {
     width: 26px;
     height: 26px;
@@ -242,7 +320,6 @@
     margin: 0;
   }
 
-  /* Renglones más compactos */
   .schedule-times {
     gap: 6px;
   }
@@ -256,7 +333,6 @@
     gap: 10px;
   }
 
-  /* Ícono de tiempo más chico (actualizado al wrap) */
   .time-icon-wrap {
     width: 28px;
     height: 28px;
@@ -264,7 +340,6 @@
     flex-shrink: 0;
   }
 
-  /* Contenedor de texto: Actividad izq, Hora der */
   .time-info {
     flex: 1;
     flex-direction: row !important;
@@ -292,7 +367,6 @@
   }
 }
 
-/* Limpiamos cualquier regla conflictiva en móviles pequeños */
 @media screen and (max-width: 480px) {
   .reuniones {
     padding: 40px 12px;

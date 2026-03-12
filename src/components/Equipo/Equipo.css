@@ -1,6 +1,63 @@
 .equipo {
   padding: 80px 0;
   background-color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Orbs flotantes */
+.equipo-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.equipo-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.18;
+}
+
+.equipo-orb--1 {
+  width: 400px;
+  height: 400px;
+  background: var(--primary-color);
+  top: -100px;
+  left: -100px;
+  animation: orb-float 10s ease-in-out infinite;
+}
+
+.equipo-orb--2 {
+  width: 300px;
+  height: 300px;
+  background: var(--accent-color);
+  bottom: -80px;
+  right: 10%;
+  animation: orb-float 13s ease-in-out infinite reverse;
+}
+
+.equipo-orb--3 {
+  width: 200px;
+  height: 200px;
+  background: var(--blue-color);
+  top: 40%;
+  left: 50%;
+  animation: orb-float 8s ease-in-out infinite 2s;
+}
+
+@keyframes orb-float {
+  0%   { transform: translate(0, 0); }
+  33%  { transform: translate(20px, -20px); }
+  66%  { transform: translate(-15px, 15px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* El resto del contenido necesita z-index para estar sobre los orbs */
+.equipo .container {
+  position: relative;
+  z-index: 1;
 }
 
 .equipo-title {
