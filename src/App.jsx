@@ -7,6 +7,8 @@ import Values from './components/Values/Values'
 import Footer from './components/Footer/Footer'
 import Equipo from './components/Equipo/Equipo'
 import VidaFamilia from './components/VidaFamilia/VidaFamilia'
+import Contacto from './components/Contacto/Contacto'
+import NuestraFamilia from './components/NuestraFamilia/NuestraFamilia'
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
       <Reuniones />
       <VidaFamilia />
       <Ubicacion />
+      <NuestraFamilia />
       <Footer />
     </div>
   )

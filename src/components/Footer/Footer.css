@@ -80,10 +80,6 @@
   color: white;
 }
 
-.social-btn.tiktok:hover {
-  background: rgba(0, 0, 0, 0.4);
-}
-
 .social-btn.whatsapp:hover {
   background: rgba(37, 211, 102, 0.25);
 }
