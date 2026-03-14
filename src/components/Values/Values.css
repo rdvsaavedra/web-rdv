@@ -352,3 +352,17 @@
     height: 26px;
   }
 }
+
+.values {
+  position: relative;
+  z-index: 2;
+}
+
+.value-item {
+  position: relative;
+  z-index: 2;
+}
+
+.value-cloud {
+  z-index: 999;
+}

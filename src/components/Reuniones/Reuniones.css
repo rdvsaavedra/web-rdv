@@ -2,7 +2,6 @@
   padding: 80px 0 120px;
   background: linear-gradient(160deg, #eae4d8 0%, #f5f0e8 50%, #e8e0d4 100%);
   position: relative;
-  overflow: hidden;
 }
 
 /* Orbs de fondo para que el glassmorphism se note */
@@ -36,7 +35,7 @@
   font-family: var(--font-display);
   font-weight: 700;
   position: relative;
-  z-index: 1;
+  z-index: 0;
 }
 
 .reuniones-grid {
@@ -45,8 +44,6 @@
   gap: 30px;
   max-width: var(--max-width);
   margin: 0 auto;
-  position: relative;
-  z-index: 1;
 }
 
 .reunion-card {
