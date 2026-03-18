@@ -1,10 +1,19 @@
 import './Equipo.css'
-import alePhoto from '../../assets/images/EquipoAle.png'
-import gusPhoto from '../../assets/images/EquipoGus.png'
+import aleYCariPhoto from '../../assets/images/EquipoAleYCari.png'
+import anaPhoto from '../../assets/images/EquipoAnaJorquera.png'
+import gabiPhoto from '../../assets/images/EquipoGabiDura.png'
+import gustavoPhoto from '../../assets/images/EquipoGustavoLauriente.png'
+import luisPhoto from '../../assets/images/EquipoLuisGimenez.png'
 
-const miembros = [
-  { nombre: 'Alejandro Casal', rol: 'Pastor Principal', foto: alePhoto },
-  { nombre: 'Gustavo Lauriente', rol: 'Líder', foto: gusPhoto },
+const pastores = [
+  { nombre: 'Alejandro y Carina Casal', rol: 'Pastores Principales', foto: aleYCariPhoto },
+]
+
+const equipoPastoral = [
+  { nombre: 'Ana Jorquera', rol: 'Equipo Pastoral', foto: anaPhoto },
+  { nombre: 'Gabriela Durá', rol: 'Equipo Pastoral', foto: gabiPhoto },
+  { nombre: 'Gustavo Lauriente', rol: 'Equipo Pastoral', foto: gustavoPhoto },
+  { nombre: 'Luis Gimenez', rol: 'Equipo Pastoral', foto: luisPhoto },
 ]
 
 const Equipo = () => {
@@ -17,21 +26,42 @@ const Equipo = () => {
       </div>
 
       <div className="container">
-        <h2 className="equipo-title">Equipo de Buenos Aires</h2>
+        <h2 className="equipo-title">Nuestro equipo</h2>
 
-        <div className="equipo-grid">
-          {miembros.map((miembro, index) => (
-            <div key={index} className="equipo-card">
-              <div className="equipo-foto">
-                {miembro.foto
-                  ? <img src={miembro.foto} alt={miembro.nombre} />
-                  : <div className="equipo-foto-placeholder" />
-                }
+        <div className="equipo-layout">
+
+          <div className="equipo-col equipo-col--pastores">
+            <h3 className="equipo-col-title">Pastores</h3>
+            {pastores.map((miembro, index) => (
+              <div key={index} className="equipo-card">
+                <div className="equipo-foto equipo-foto--grande">
+                  <img src={miembro.foto} alt={miembro.nombre} />
+                </div>
+                <h4 className="equipo-nombre">{miembro.nombre}</h4>
+                <p className="equipo-rol">{miembro.rol}</p>
               </div>
-              <h3 className="equipo-nombre">{miembro.nombre}</h3>
-              <p className="equipo-rol">{miembro.rol}</p>
+            ))}
+          </div>
+
+          <div className="equipo-divisor">
+            <div className="equipo-divisor-line" />
+          </div>
+
+          <div className="equipo-col equipo-col--pastoral">
+            <h3 className="equipo-col-title">Equipo pastoral</h3>
+            <div className="equipo-grid">
+              {equipoPastoral.map((miembro, index) => (
+                <div key={index} className="equipo-card">
+                  <div className="equipo-foto">
+                    <img src={miembro.foto} alt={miembro.nombre} />
+                  </div>
+                  <h4 className="equipo-nombre">{miembro.nombre}</h4>
+                  <p className="equipo-rol">{miembro.rol}</p>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+
         </div>
       </div>
     </section>
