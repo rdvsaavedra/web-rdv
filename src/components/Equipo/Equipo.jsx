@@ -38,7 +38,6 @@ const Equipo = () => {
                   <img src={miembro.foto} alt={miembro.nombre} />
                 </div>
                 <h4 className="equipo-nombre">{miembro.nombre}</h4>
-                <p className="equipo-rol">{miembro.rol}</p>
               </div>
             ))}
           </div>
@@ -56,7 +55,6 @@ const Equipo = () => {
                     <img src={miembro.foto} alt={miembro.nombre} />
                   </div>
                   <h4 className="equipo-nombre">{miembro.nombre}</h4>
-                  <p className="equipo-rol">{miembro.rol}</p>
                 </div>
               ))}
             </div>
