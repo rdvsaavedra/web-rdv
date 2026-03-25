@@ -29,6 +29,28 @@ const Header = () => {
     return () => observers.forEach(o => o?.disconnect())
   }, [])
 
+  useEffect(() => {
+    if (!isMenuOpen) return
+
+    const handleClickOutside = (e) => {
+      if (!e.target.closest('.navbar')) {
+        setIsMenuOpen(false)
+      }
+    }
+
+    const handleScroll = () => setIsMenuOpen(false)
+
+    document.addEventListener('click', handleClickOutside)
+    document.addEventListener('touchstart', handleClickOutside)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside)
+      document.removeEventListener('touchstart', handleClickOutside)
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [isMenuOpen])
+
   return (
     <header className="header">
       <nav className="navbar">
