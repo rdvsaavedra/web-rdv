@@ -1,7 +1,7 @@
 import './VidaFamilia.css'
-import vf1 from '../../assets/images/VidaEnFamilia1.png'
-import vf2 from '../../assets/images/VidaEnFamilia2.png'
-import vf3 from '../../assets/images/VidaEnFamilia3.png'
+import vf1 from '../../assets/images/VidaEnFamilia1.webp'
+import vf2 from '../../assets/images/VidaEnFamilia2.webp'
+import vf3 from '../../assets/images/VidaEnFamilia3.webp'
 
 const cards = [
   { title: 'Acepté a Cristo', img: vf1 },

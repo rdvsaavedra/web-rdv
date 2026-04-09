@@ -1,9 +1,9 @@
 import './Equipo.css'
-import aleYCariPhoto from '../../assets/images/EquipoAleYCari.png'
-import anaPhoto from '../../assets/images/EquipoAnaJorquera.png'
-import gabiPhoto from '../../assets/images/EquipoGabiDura.png'
-import gustavoPhoto from '../../assets/images/EquipoGustavoLauriente.png'
-import luisPhoto from '../../assets/images/EquipoLuisGimenez.png'
+import aleYCariPhoto from '../../assets/images/EquipoAleYCari.webp'
+import anaPhoto from '../../assets/images/EquipoAnaJorquera.webp'
+import gabiPhoto from '../../assets/images/EquipoGabiDura.webp'
+import gustavoPhoto from '../../assets/images/EquipoGustavoLauriente.webp'
+import luisPhoto from '../../assets/images/EquipoLuisGimenez.webp'
 
 const pastores = [
   { nombre: 'Alejandro y Carina Casal', rol: 'Pastores Principales', foto: aleYCariPhoto },

@@ -1,7 +1,7 @@
 "use client"
 
 import "./Reuniones.css"
-import separadorImg from "../../assets/images/Separador.png"
+import separadorImg from "../../assets/images/Separador.webp"
 import { Calendar, BookOpen, HeartHandshake, Church, Baby, Users, User, Heart } from "lucide-react"
 
 const ICON_SIZE = 22

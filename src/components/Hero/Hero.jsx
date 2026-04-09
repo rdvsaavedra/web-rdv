@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react'
 import './Hero.css'
-import LogoImg from '../../assets/images/IglesiaLogoCompleto.png'
+import LogoImg from '../../assets/images/IglesiaLogoCompleto.webp'
 import { MapPin } from 'lucide-react'
 
-import foto1 from '../../assets/images/FotoBannerHero1.png'
-import foto2 from '../../assets/images/FotoBannerHero2.png'
-import foto3 from '../../assets/images/FotoBannerHero3.png'
-import foto4 from '../../assets/images/FotoBannerHero4.png'
-import foto5 from '../../assets/images/FotoBannerHero5.png'
-import foto6 from '../../assets/images/FotoBannerHero6.png'
+import foto1 from '../../assets/images/FotoBannerHero1.webp'
+import foto2 from '../../assets/images/FotoBannerHero2.webp'
+import foto3 from '../../assets/images/FotoBannerHero3.webp'
+import foto4 from '../../assets/images/FotoBannerHero4.webp'
+import foto5 from '../../assets/images/FotoBannerHero5.webp'
+import foto6 from '../../assets/images/FotoBannerHero6.webp'
 
 const slides = [foto1, foto2, foto3, foto4, foto5, foto6]
 

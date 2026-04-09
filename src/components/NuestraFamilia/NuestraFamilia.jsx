@@ -1,12 +1,12 @@
 import './NuestraFamilia.css'
-import h1 from '../../assets/images/NuestraFamilia1Horizontal.png'
-import v1 from '../../assets/images/NuestraFamilia1Vertical.png'
-import h2 from '../../assets/images/NuestraFamilia2Horizontal.png'
-import v2 from '../../assets/images/NuestraFamilia2Vertical.png'
-import v3 from '../../assets/images/NuestraFamilia3Vertical.png'
-import v4 from '../../assets/images/NuestraFamilia4Vertical.png'
-import v5 from '../../assets/images/NuestraFamilia5Vertical.png'
-import v6 from '../../assets/images/NuestraFamilia6Vertical.png'
+import h1 from '../../assets/images/NuestraFamilia1Horizontal.webp'
+import v1 from '../../assets/images/NuestraFamilia1Vertical.webp'
+import h2 from '../../assets/images/NuestraFamilia2Horizontal.webp'
+import v2 from '../../assets/images/NuestraFamilia2Vertical.webp'
+import v3 from '../../assets/images/NuestraFamilia3Vertical.webp'
+import v4 from '../../assets/images/NuestraFamilia4Vertical.webp'
+import v5 from '../../assets/images/NuestraFamilia5Vertical.webp'
+import v6 from '../../assets/images/NuestraFamilia6Vertical.webp'
 
 const photos = [
   { src: v1, horizontal: false },

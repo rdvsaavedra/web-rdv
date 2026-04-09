@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './Header.css'
-import logoCompleto from '../../assets/images/IglesiaLogoCompletoBlack.png'
+import logoCompleto from '../../assets/images/IglesiaLogoCompletoBlack.webp'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -15,7 +15,7 @@ const Header = () => {
   }
 
   useEffect(() => {
-    const sections = ['inicio', 'about', 'vida-familia', 'contacto']
+    const sections = ['inicio', 'about', /* 'vida-familia', */ 'contacto']
     const observers = sections.map(id => {
       const el = document.getElementById(id)
       if (!el) return null
@@ -69,9 +69,9 @@ const Header = () => {
             <li className="nav-item">
               <a className="nav-link" href="https://www.youtube.com/c/iglesiarenuevodevidasaavedra/live" target="_blank" rel="noopener noreferrer">Reuniones</a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <button className={`nav-link ${activeSection === 'vida-familia' ? 'active' : ''}`} onClick={() => scrollToSection('vida-familia')}>Vida en familia</button>
-            </li>
+            </li> */}
             <li className="nav-item">
               <button className={`nav-link ${activeSection === 'contacto' ? 'active' : ''}`} onClick={() => scrollToSection('contacto')}>Contacto</button>
             </li>

@@ -1,6 +1,6 @@
 import './Ubicacion.css'
 import GoogleMap from '../Map/GoogleMap'
-import iglesiaImg from '../../assets/images/FotoIglesiaFrente.png'
+import iglesiaImg from '../../assets/images/FotoIglesiaFrente.webp'
 import { MapPin } from 'lucide-react'
 
 const Ubicacion = () => {

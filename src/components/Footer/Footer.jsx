@@ -1,5 +1,5 @@
 import './Footer.css'
-import logoCompleto from '../../assets/images/IglesiaLogoCompleto.png'
+import logoCompleto from '../../assets/images/IglesiaLogoCompleto.webp'
 import { MapPin } from 'lucide-react'
 
 const Footer = () => {
