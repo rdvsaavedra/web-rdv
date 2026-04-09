@@ -37,6 +37,13 @@ const Hero = () => {
     <section id="inicio" className="hero">
 
       <div className="hero-carousel">
+        <img
+          src={foto1}
+          fetchpriority="high"
+          alt=""
+          aria-hidden="true"
+          style={{ position: 'absolute', width: '1px', height: '1px', opacity: 0, pointerEvents: 'none' }}
+        />
         {slides.map((slide, index) => (
           <div
             key={index}
@@ -68,7 +75,7 @@ const Hero = () => {
               <MapPin size={14} />
               <span>Buenos Aires, Argentina</span>
             </div>
-            <img src={LogoImg} alt="Renuevo de vida" className="hero-logo" />
+            <img src={LogoImg} alt="Renuevo de vida" className="hero-logo" width="210" height="223" />
             <p className="hero-description">La alegría de estar en C A S A</p>
             <button className="hero-btn" onClick={handleReunionesClick}>
               <span>Horarios</span>

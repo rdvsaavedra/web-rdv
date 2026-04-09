@@ -19,11 +19,11 @@ const Footer = () => {
 
         <div className="footer-top">
           <div className="footer-logo">
-            <img src={logoCompleto} alt="Iglesia Renuevo de Vida" />
+            <img src={logoCompleto} alt="Iglesia Renuevo de Vida" width="49" height="52" />
           </div>
 
           <div className="footer-social">
-            <h4 className="footer-social-title">Seguinos</h4>
+            <p className="footer-social-title">Seguinos</p>
             <div className="social-icons-container">
               {socials.map(s => (
                 <a

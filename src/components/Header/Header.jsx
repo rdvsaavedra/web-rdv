@@ -56,7 +56,7 @@ const Header = () => {
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo" onClick={() => scrollToSection('inicio')}>
-            <img src={logoCompleto} alt="Renuevo de Vida" />
+            <img src={logoCompleto} alt="Renuevo de Vida" width="49" height="52" />
           </div>
 
           <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>

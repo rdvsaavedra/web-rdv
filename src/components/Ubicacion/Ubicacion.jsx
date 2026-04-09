@@ -29,14 +29,14 @@ const Ubicacion = () => {
               </div>
               <div className="direccion-text">
                 <span className="direccion-label">Dirección</span>
-                <h4>Crisólogo Larralde 3471</h4>
+                <p className="direccion-calle">Crisólogo Larralde 3471</p>
                 <p>Saavedra, CABA</p>
               </div>
               <span className="direccion-arrow">→</span>
             </a>
 
             <div className="iglesia-image">
-              <img src={iglesiaImg} alt="Iglesia Renuevo de Vida" />
+              <img src={iglesiaImg} alt="Iglesia Renuevo de Vida" width="800" height="507" />
             </div>
           </div>
 

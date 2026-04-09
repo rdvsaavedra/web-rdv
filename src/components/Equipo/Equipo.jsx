@@ -35,7 +35,7 @@ const Equipo = () => {
             {pastores.map((miembro, index) => (
               <div key={index} className="equipo-card">
                 <div className="equipo-foto equipo-foto--grande">
-                  <img src={miembro.foto} alt={miembro.nombre} />
+                  <img src={miembro.foto} alt={miembro.nombre} width="180" height="180" />
                 </div>
                 <h4 className="equipo-nombre">{miembro.nombre}</h4>
               </div>
@@ -52,7 +52,7 @@ const Equipo = () => {
               {equipoPastoral.map((miembro, index) => (
                 <div key={index} className="equipo-card">
                   <div className="equipo-foto">
-                    <img src={miembro.foto} alt={miembro.nombre} />
+                    <img src={miembro.foto} alt={miembro.nombre} width="120" height="120" />
                   </div>
                   <h4 className="equipo-nombre">{miembro.nombre}</h4>
                 </div>
