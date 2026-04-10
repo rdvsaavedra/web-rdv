@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './Header.css'
 import logoCompleto from '../../assets/images/IglesiaLogoCompletoBlack.webp'
+import { ExternalLink } from 'lucide-react'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -67,7 +68,9 @@ const Header = () => {
               <button className={`nav-link ${activeSection === 'about' ? 'active' : ''}`} onClick={() => scrollToSection('about')}>Nosotros</button>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="https://www.youtube.com/c/iglesiarenuevodevidasaavedra/live" target="_blank" rel="noopener noreferrer">Reuniones</a>
+              <a className="nav-link nav-link--external" href="https://www.youtube.com/c/iglesiarenuevodevidasaavedra/live" target="_blank" rel="noopener noreferrer">
+                Reuniones <ExternalLink size={12} className="nav-external-icon" />
+              </a>
             </li>
             {/* <li className="nav-item">
               <button className={`nav-link ${activeSection === 'vida-familia' ? 'active' : ''}`} onClick={() => scrollToSection('vida-familia')}>Vida en familia</button>

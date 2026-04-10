@@ -1,4 +1,5 @@
 import './Equipo.css'
+import { useScrollReveal } from '../../hooks/useScrollReveal'
 import aleYCariPhoto from '../../assets/images/EquipoAleYCari.webp'
 import anaPhoto from '../../assets/images/EquipoAnaJorquera.webp'
 import gabiPhoto from '../../assets/images/EquipoGabiDura.webp'
@@ -17,6 +18,7 @@ const equipoPastoral = [
 ]
 
 const Equipo = () => {
+  const reveal = useScrollReveal()
   return (
     <section className="equipo">
       <div className="equipo-bg">
@@ -26,9 +28,9 @@ const Equipo = () => {
       </div>
 
       <div className="container">
-        <h2 className="equipo-title">Nuestro equipo</h2>
+        <h2 className="equipo-title" ref={reveal}>Nuestro equipo</h2>
 
-        <div className="equipo-layout">
+        <div className="equipo-layout" ref={reveal}>
 
           <div className="equipo-col equipo-col--pastores">
             <h3 className="equipo-col-title">Pastores</h3>

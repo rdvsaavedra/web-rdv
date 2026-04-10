@@ -82,22 +82,27 @@
 
 .social-btn.whatsapp:hover {
   background: rgba(37, 211, 102, 0.25);
+  box-shadow: 0 0 16px rgba(37, 211, 102, 0.3);
 }
 
 .social-btn.gmail:hover {
   background: rgba(234, 67, 53, 0.25);
+  box-shadow: 0 0 16px rgba(234, 67, 53, 0.3);
 }
 
 .social-btn.youtube:hover {
   background: rgba(255, 0, 0, 0.2);
+  box-shadow: 0 0 16px rgba(255, 0, 0, 0.25);
 }
 
 .social-btn.instagram:hover {
   background: linear-gradient(45deg, rgba(240, 148, 51, 0.3), rgba(220, 39, 67, 0.3), rgba(188, 24, 136, 0.3));
+  box-shadow: 0 0 16px rgba(220, 39, 67, 0.3);
 }
 
 .social-btn.facebook:hover {
   background: rgba(59, 89, 152, 0.3);
+  box-shadow: 0 0 16px rgba(59, 89, 152, 0.3);
 }
 
 .footer-bottom {

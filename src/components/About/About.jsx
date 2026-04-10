@@ -1,11 +1,13 @@
 import './About.css'
 import { Lightbulb, Target } from 'lucide-react'
+import { useScrollReveal } from '../../hooks/useScrollReveal'
 
 const About = () => {
+  const reveal = useScrollReveal()
   return (
     <section id="about" className="about">
       <div className="container">
-        <div className="vision-mission">
+        <div className="vision-mission" ref={reveal}>
           <div className="vm-item vision">
             <div className="vm-header">
               <Lightbulb size={28} color="var(--primary-color)" />

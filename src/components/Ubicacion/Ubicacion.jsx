@@ -2,13 +2,15 @@ import './Ubicacion.css'
 import GoogleMap from '../Map/GoogleMap'
 import iglesiaImg from '../../assets/images/FotoIglesiaFrente.webp'
 import { MapPin } from 'lucide-react'
+import { useScrollReveal } from '../../hooks/useScrollReveal'
 
 const Ubicacion = () => {
+  const reveal = useScrollReveal()
   return (
     <section id="ubicacion" className="ubicacion">
       <div className="container">
 
-        <div className="ubicacion-header">
+        <div className="ubicacion-header" ref={reveal}>
           <span className="ubicacion-eyebrow">
             <MapPin size={13} />
             visitanos
@@ -16,7 +18,7 @@ const Ubicacion = () => {
           <h2 className="ubicacion-title">Sumate a nuestras reuniones</h2>
         </div>
 
-        <div className="ubicacion-content">
+        <div className="ubicacion-content" ref={reveal}>
           <div className="ubicacion-info">
             <a
               href="https://maps.app.goo.gl/Kn3ZpuDkE51TRHkJA"

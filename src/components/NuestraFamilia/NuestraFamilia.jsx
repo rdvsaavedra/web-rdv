@@ -1,4 +1,5 @@
 import './NuestraFamilia.css'
+import { useScrollReveal } from '../../hooks/useScrollReveal'
 import h1 from '../../assets/images/NuestraFamilia1Horizontal.webp'
 import v1 from '../../assets/images/NuestraFamilia1Vertical.webp'
 import h2 from '../../assets/images/NuestraFamilia2Horizontal.webp'
@@ -22,9 +23,10 @@ const photos = [
 const doubled = [...photos, ...photos]
 
 const NuestraFamilia = () => {
+  const reveal = useScrollReveal()
   return (
     <section id="nuestra-familia" className="nuestra-familia">
-      <div className="nf-header">
+      <div className="nf-header" ref={reveal}>
         <h2 className="nf-title">Nuestra familia</h2>
         <p className="nf-subtitle">Personas reales, historias reales</p>
       </div>

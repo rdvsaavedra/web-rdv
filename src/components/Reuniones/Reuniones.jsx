@@ -3,6 +3,7 @@
 import "./Reuniones.css"
 import separadorImg from "../../assets/images/Separador.webp"
 import { Calendar, BookOpen, HeartHandshake, Church, Baby, Users, User, Heart } from "lucide-react"
+import { useScrollReveal } from '../../hooks/useScrollReveal'
 
 const ICON_SIZE = 22
 
@@ -73,14 +74,15 @@ const reunionesData = [
 ]
 
 const Reuniones = () => {
+  const reveal = useScrollReveal()
   return (
     <>
       <section id="reuniones-section" className="reuniones">
         <div className="container">
-          <h2 className="reuniones-title">Reuniones</h2>
+          <h2 className="reuniones-title" ref={reveal}>Reuniones</h2>
           <div className="reuniones-grid">
             {reunionesData.map((reunion) => (
-              <div key={reunion.id} className="reunion-card fade-in">
+              <div key={reunion.id} className="reunion-card fade-in" ref={reveal}>
                 <h3>{reunion.title}</h3>
                 {reunion.schedule.map((item, index) => (
                   <div key={index} className="schedule-item">
